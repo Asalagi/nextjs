@@ -1,14 +1,9 @@
-import Image from 'next/image';
-
-
-// website.com/foo/bar
-
 
 export default function Home() {
   return (
     <main>
       <div>
-        <h1>Hola!</h1>
+        <h1>Are we still working?</h1>
       </div>
     </main>
   )
