@@ -3,7 +3,7 @@ export default function Home() {
   return (
     <main>
       <div>
-        <h1>Are we still working?</h1>
+        <h1>Is this working?</h1>
       </div>
     </main>
   )
