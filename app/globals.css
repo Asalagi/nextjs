@@ -20,12 +20,12 @@ body {
  display: flex;
  align-items: center;
  justify-content: center;
- background-color: #618264;
+ background-color: #F4F2DE;
 }
 
 h1 {
   font-weight: bold;
   font-size: 5rem;
-  color: #EE9322;
+  color: #3AA6B9;
 }
 
