@@ -8,9 +8,21 @@ export default function Home() {
     greeting = 'Good Day!';
   } else {
     greeting = 'Good Evening!';
-  }
+  };
 
-  const dayDate = new Date().toLocaleString();
+  const dayDate = new Date().toLocaleString('en-US', {
+    timeZone: 'America/Chicago',
+    weekday: 'long',
+    month: 'long',
+    day: '2-digit',
+    year: 'numeric'
+  });
+
+  const dayTime = new Date().toLocaleString('en-US', {
+    timeZone: 'America/Chicago',
+    hour: '2-digit',
+    minute: '2-digit',
+  });
 
   return (
     <main>
@@ -20,7 +32,7 @@ export default function Home() {
           link or something like that will go here.
         </div>
         <div className="inner-content">
-        <p>{dayDate}</p>
+        <p>{dayDate} <br/> {dayTime}</p>
         <h1 className="center">{greeting}</h1>
         </div>
         <div className="main-footer">
