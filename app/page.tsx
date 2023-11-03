@@ -16,7 +16,7 @@ export default function Home() {
 
   const time = new Date().getHours();
   let greeting;
-  if (time < 13) {
+  if (time < 11) {
     greeting = 'Good Morning!';
   } else if (time < 18) {
     greeting = 'Good Day!';
