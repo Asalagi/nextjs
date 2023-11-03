@@ -4,11 +4,13 @@ export default function Home() {
   let greeting;
   if (time < 11) {
     greeting = 'Good Morning!';
-  } else if (time < 18) {
+  } else if (time < 18 && time > 11) {
     greeting = 'Good Day!';
   } else {
     greeting = 'Good Evening!';
   }
+
+  const dayDate = new Date();
   return (
     <main>
       <div>
@@ -18,6 +20,7 @@ export default function Home() {
         </div>
         <div className="inner-content">
         <h1 className="center">{greeting}</h1>
+        <p className="center">{dayDate.toString()}</p>
         </div>
         <div className="main-footer">
           here is a simple footer
