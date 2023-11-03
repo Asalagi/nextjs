@@ -10,10 +10,7 @@ export default function Home() {
     greeting = 'Good Evening!';
   }
 
-  const dayDate = new Date().toDateString();
-
-  const hour = new Date().getHours();
-  const minute = new Date().getMinutes();
+  const dayDate = new Date().toLocaleString();
 
   return (
     <main>
@@ -23,8 +20,7 @@ export default function Home() {
           link or something like that will go here.
         </div>
         <div className="inner-content">
-        <p>{dayDate} <br/>
-        {hour}:{minute}</p>
+        <p>{dayDate}</p>
         <h1 className="center">{greeting}</h1>
         </div>
         <div className="main-footer">
