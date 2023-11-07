@@ -1,0 +1,29 @@
+.main-content {
+    display: flex;
+    flex-direction: column;
+    background-color: #427D9D;
+    min-height: 100vh;
+    align-items: center;
+}
+
+.title {
+    color: #F3EEEA;
+}
+
+.outer-box {
+    width: 50vw;
+    min-height: 50vh;
+    padding: 20px;
+    margin-bottom: 40px;
+    background-color: #F3EEEA;
+    border: 1px solid black;
+    border-radius: 50px;
+    box-shadow: 10px 10px 10px 0px rgb(34, 34, 34);
+}
+
+.content-box {
+    background-color: #F3EEEA;
+    padding: 10px;
+}
+
+
