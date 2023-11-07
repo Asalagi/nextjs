@@ -10,7 +10,7 @@ function Page() {
             <div className="content-box">
                 <div className="nav-bar">
                     <Link href="/foo" className="link"><button className="nav-btn">Home</button></Link>
-                    <Link href="/foo" className="link"><button className="nav-btn">About</button></Link>
+                    <Link href="/foo/about" className="link"><button className="nav-btn">About</button></Link>
                     <Link href="/foo" className="link"><button className="nav-btn">Resume</button></Link>
                     <Link href="/foo" className="link"><button className="nav-btn">Blog</button></Link>
                     <Link href="/foo" className="link"><button className="nav-btn">Contact</button></Link>
