@@ -38,7 +38,7 @@ export default function Home() {
             </div>
             <div className="main-text">
             <h1 className="center">{greeting}</h1>
-            <Link href="/foo">Personal Page</Link>
+            <Link href="/alliesalagi">Personal Page</Link>
             <p>Goat goose hen horse. Mallet herbs basil nest, in welding equipment pens quail. Ewes mushrooms zucchini in forage Harvester at sheep with tractor. Gourds utters at welding equipment a oink oink haybine. Goose hammers cattle rats in crows. Grapes at yams mushrooms organic berries gobble.</p>
             <p>Outhouse at nails mower. Rooster celery pineapples fertilizer, a melon chirp pets in. Veterinarian at Seeder eggs with watermelon ostriches. Goat goose hen horse. Grapes nest pitch fork an plows mapl.</p>
             <p>Syrup yearlings, quilt squeak doggies. Goose hammers cattle rats in crows. Baa potato donkey mouse, at gate grain bins woof. Cauliflower a seeds quail. Forage Harvester rakes peacocks, squeal garden woof.</p>

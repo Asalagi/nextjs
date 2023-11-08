@@ -47,4 +47,16 @@
     padding: 10px;
 }
 
+.card-title {
+    padding: 0px;
+    background-color: #F3EEEA;
+    margin-top: 10px;
+    border-bottom: 1px black dashed;
+}
 
+.res-title {
+    margin-bottom: 0px;
+    margin-left: 5px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
