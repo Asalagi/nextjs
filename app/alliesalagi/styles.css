@@ -6,8 +6,16 @@
     align-items: center;
 }
 
+p {
+    font-size: .8rem;
+}
+.bold {
+    font-weight: bold;
+}
+
 .title {
     color: #F3EEEA;
+    font-size: 3rem;
 }
 
 .nav-bar {
@@ -57,6 +65,6 @@
 .res-title {
     margin-bottom: 0px;
     margin-left: 5px;
-    font-size: 1.2rem;
+    font-size: 1.25rem;
     font-weight: bold;
 }
