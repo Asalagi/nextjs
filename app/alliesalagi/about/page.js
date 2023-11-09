@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import '../styles.css';
+import Image from 'next/image';
+import profile from './profile.jpg';
 
 function About () {
     return (
@@ -15,8 +17,11 @@ function About () {
                     <Link href="/alliesalagi/blog" className="link"><button className="nav-btn">Blog</button></Link>
                     <Link href="/alliesalagi/contact" className="link"><button className="nav-btn">Contact</button></Link>
         </div>
-        <p>Write something about myself here. Maybe add an image.</p>
-        </div>
+        <div className="card-title">
+                <p className="res-title">About Me</p></div>
+                <p className="top"><Image src={profile} width={150} height={308} alt="Picture of the me"/></p>
+                    <p>{"Hi! My name is Allie."}</p>
+             </div>
             </div>
         </div>
     </div>
