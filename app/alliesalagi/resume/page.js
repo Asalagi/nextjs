@@ -20,6 +20,7 @@ function Resume () {
                 <p>{" As a kid I loved using HTML and CSS to build websites for virtual horse games that I was involved in. When I began working full time, website building and those fun games took a backseat. I worked in various animal related jobs (ranch hand, dog groomer), until I was able to finally open my own business grooming dogs. A business I loved. But after 5 awesome years, I realized that the life of a business owner isn’t what I wanted at this point. My brother in law, a software engineer himself, reminded me of how much fun I had making those old sites when I was younger. With the money I made selling my business, I decided to jump back into web development. I've been having a blast rekindling my old passion, and learning the new modern ways of writing code. While my background isn’t full of programming experience, I’d like to say it shows my hard work ethic that has carried over to my love for programming. "}</p>
                 <div className="card-title">
                 <p className="res-title">Education/Skills</p></div>
+                <p><Link href="https://github.com/Asalagi" className="link">Github Commits</Link></p>
                 <p>{"2023 Web Development BootCamp Oline"}<br/>
                 {"By Dr. Angela Yu"}</p>
                 <p className="bold">{"Skills"}</p>

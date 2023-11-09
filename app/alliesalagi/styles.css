@@ -6,6 +6,15 @@
     align-items: center;
 }
 
+.center {
+    align-items: center;
+}
+
+.link {
+    color: #526D82;
+    text-decoration: none;
+}
+
 p {
     font-size: .8rem;
 }

@@ -15,8 +15,13 @@ function Contact () {
                 <Link href="/alliesalagi/blog" className="link"><button className="nav-btn">Blog</button></Link>
                 <Link href="/alliesalagi/contact" className="link"><button className="nav-btn">Contact</button></Link>
             </div>
-          <p>{"Put contacts here"}</p></div>
+            <div className="card-title">
+                <p className="res-title">Contact Me</p></div>
+          <p>{"Email: alliesalagi@gmail.com"}<br/>
+          {"LinkedIn: "}<Link href="http://www.linkedin.com/in/allie-salagi-7a2794297" className="link">Allie Salagi</Link><br/>
+          {"Facebook: "}<Link href="http://www.facebook.com/allie.salagi" className="link">Allie Salagi</Link></p>
         </div>
+       </div>
       </div>
     </div>
     )
