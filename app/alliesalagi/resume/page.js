@@ -18,6 +18,18 @@ function Resume () {
             <div className="card-title">
                 <p className="res-title">Summary</p></div>
                 <p>{" As a kid I loved using HTML and CSS to build websites for virtual horse games that I was involved in. When I began working full time, website building and those fun games took a backseat. I worked in various animal related jobs (ranch hand, dog groomer), until I was able to finally open my own business grooming dogs. A business I loved. But after 5 awesome years, I realized that the life of a business owner isn’t what I wanted at this point. My brother in law, a software engineer himself, reminded me of how much fun I had making those old sites when I was younger. With the money I made selling my business, I decided to jump back into web development. I've been having a blast rekindling my old passion, and learning the new modern ways of writing code. While my background isn’t full of programming experience, I’d like to say it shows my hard work ethic that has carried over to my love for programming. "}</p>
+                <div className="card-title">
+                <p className="res-title">Education/Skills</p></div>
+                <p>{"2023 Web Development BootCamp Oline"}<br/>
+                {"By Dr. Angela Yu"}</p>
+                <p className="bold">{"Skills"}</p>
+                    <ul>
+                        <li>{"HTML"}</li>
+                        <li>{"CSS"}</li>
+                        <li>{"Javascript"}</li>
+                        <li>{"React"}</li>
+                        <li>{"SQL Database (PostgreSQL) Express"}</li>
+                    </ul>
             <div className="card-title">
                 <p className="res-title">Experience</p></div>
                 <p className="bold">{"Owner"}<br/>
@@ -68,16 +80,30 @@ function Resume () {
                         <li>{"Training bathers and new groomers"}</li>
                     </ul>
                     <hr/>
-                    <p className="bold">{"Position"}<br/>
-                {"Company"}<br/>
-                {"Date Start - Date End"}</p>
-                <p>{"Summary of Position at Company"}</p>
+                <p className="bold">{"Dog Groomer"}<br/>
+                {"Country Kennels"}<br/>
+                {"Jul 2011 - Apr 2016"}</p>
+                <p>{"Working at Country Kennels taught me how to bathe a dog properly, assessing coat type and skin condition. I was taught how to groom and take direction from the client on what their desired style they want for their dog. I was taught time management in a high stress enviroment."}</p>
                 <p className="bold">{"Duties included"}</p>
                     <ul>
-                        <li>{"Duties list"}</li>
+                        <li>{"Bathing and grooming dogs to owners request"}</li>
+                        <li>{"Booking appointments for clients"}</li>
+                        <li>{"Checking in clients and taking instructions on their grooming request"}</li>
+                        <li>{"Helping train bathers and beginner groomers"}</li>
                     </ul>
                     <hr/>
-        </div>
+                <p className="bold">{"Ranch Hand/Assistant"}<br/>
+                {"Various horse ranches"}<br/>
+                {"Mar 2004 - May 2011"}</p>
+                <p>{"Working at different horse ranches gave me the knowledge of various horse disciplines, advanced my skills in reading horses body language, care and management of horses, time management and keeping horses on a realistic and set schedule for training, and care such as farrier and vet visits"}</p>
+                <p className="bold">{"Duties included"}</p>
+                    <ul>
+                        <li>{"Keeping horses waters full, feeding, cleaning stalls"}</li>
+                        <li>{"Getting horses ready for training sessions"}</li>
+                        <li>{"Walking, lunging and getting horses back from being laid up"}</li>
+                        <li>{"Traveling to shows as an assistant to care for and get horses ready for classes"}</li>
+                    </ul>
+            </div>
        </div>
      </div>
     </div>
