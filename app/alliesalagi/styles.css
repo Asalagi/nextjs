@@ -46,9 +46,20 @@ hr {
     font-size: 3rem;
 }
 
+.nav-link {
+    display: flex;
+    padding: 0;
+    width: 100%;
+    margin: 0;
+    list-style: none;
+    justify-content: space-around;
+    align-items: center;
+}
+
 .nav-bar {
     display: flex;
     width: 100%;
+    padding: 2px;
     background-color: #526D82;
     justify-content:space-around;
     align-items: center;
@@ -58,8 +69,7 @@ hr {
     background-color: #526D82;
     text-decoration: none;
     color: black;
-    border: 0px;
-    padding: .4rem;
+    border: 0px black solid;
     font-size: 1.5rem;
 }
 
@@ -128,9 +138,7 @@ li {
 
 .nav-bar {
     display: flex;
-    width: 75%;
-    justify-content: space-around;
-    align-items: center;
+    flex-direction: column;
 }
     
 .nav-btn {
@@ -138,7 +146,6 @@ li {
     text-decoration: none;
     color: black;
     border: 0px;
-    padding: .4rem;
     font-size: 1rem;
 }
     
