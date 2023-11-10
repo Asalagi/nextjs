@@ -122,10 +122,14 @@ hr {
     font-weight: bold;
 }
 
+li {
+    font-size: .8rem;
+}
+
 .nav-bar {
     display: flex;
-    width: 100%;
-    justify-content: space-between;
+    width: 75%;
+    justify-content: space-around;
     align-items: center;
 }
     
