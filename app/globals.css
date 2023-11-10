@@ -71,10 +71,19 @@ h1 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 88vw;
+  width: 100%;
   padding: 10px;
   background-color: #F3EEEA;
 }
+
+.image {
+  object-fit: contain;
+  width: 100% !important;
+  position: relative !important;
+  height: unset !important;
+}
+
+
 .main-footer {
   background-color: #0a3248;
   height: 5vh;

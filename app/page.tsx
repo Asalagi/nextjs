@@ -33,7 +33,7 @@ export default function Home() {
         <div className="main-container">
            <div className="inner-content">
             <div className="main-text">
-            <Link href="/alliesalagi"><Image src={logo} width={600} height={641} alt="logo"/></Link>
+            <Link href="/alliesalagi"><Image src={logo} className="image" fill={true} alt="logo"/></Link>
             {"Click logo to enter"}
             <p className="small">{"logo made on "}<Link href="https://www.canva.com/">Canva</Link></p>
             </div>
