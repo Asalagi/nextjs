@@ -8,13 +8,13 @@ function Resume () {
        <h1 className="title">Allie Salagi</h1> 
        <div className="outer-box">
         <div className="content-box">
-            <div className="nav-bar">
-                <Link href="/alliesalagi" className="link"><button className="nav-btn">Home</button></Link>
-                <Link href="/alliesalagi/about" className="link"><button className="nav-btn">About</button></Link>
-                <Link href="/alliesalagi/resume" className="link"><button className="nav-btn">Resume</button></Link>
-                <Link href="/alliesalagi/blog" className="link"><button className="nav-btn">Blog</button></Link>
-                <Link href="/alliesalagi/contact" className="link"><button className="nav-btn">Contact</button></Link>
-            </div>
+        <div className="nav-bar">
+                    <Link href="/alliesalagi" className="link nav-btn">Home</Link>
+                    <Link href="/alliesalagi/about" className="link nav-btn">About</Link>
+                    <Link href="/alliesalagi/resume" className="link nav-btn">Resume</Link>
+                    <Link href="/alliesalagi/blog" className="link nav-btn">Blog</Link>
+                    <Link href="/alliesalagi/contact" className="link nav-btn">Contact</Link>
+        </div>
             <div className="card-title">
                 <p className="res-title">Summary</p></div>
                 <p>{" As a kid I loved using HTML and CSS to build websites for virtual horse games that I was involved in. When I began working full time, website building and those fun games took a backseat. I worked in various animal related jobs (ranch hand, dog groomer), until I was able to finally open my own business grooming dogs. A business I loved. But after 5 awesome years, I realized that the life of a business owner isn’t what I wanted at this point. My brother in law, a software engineer himself, reminded me of how much fun I had making those old sites when I was younger. With the money I made selling my business, I decided to jump back into web development. I've been having a blast rekindling my old passion, and learning the new modern ways of writing code. While my background isn’t full of programming experience, I’d like to say it shows my hard work ethic that has carried over to my love for programming. "}</p>
