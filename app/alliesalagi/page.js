@@ -18,9 +18,10 @@ function Page() {
         <h1 className="title">Allie Salagi</h1> 
         <div className="outer-box">
             <div className="content-box">
-            <div className="nav-bar">
-                 <ul className="nav-link">
-                    <li><Link href="/alliesalagi" className="link nav-btn">Home</Link></li>
+            <div className="nav-bar dropdown">
+              <div className="menu">Menu</div>
+                 <ul className="nav-link dropdown-content">
+                    <li><Link href="/alliesalagi" className="link nav-btn first">Home</Link></li>
                     <li><Link href="/alliesalagi/about" className="link nav-btn">About</Link></li>
                     <li><Link href="/alliesalagi/resume" className="link nav-btn">Resume</Link></li>
                     <li><Link href="/alliesalagi/blog" className="link nav-btn">Blog</Link></li>
