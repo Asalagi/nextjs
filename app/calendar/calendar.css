@@ -1,0 +1,44 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+
+.calendar-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5%;
+    background-color: #F3F3F3;
+    border-radius: 50px;
+    border: 2px black dashed;
+    width: 75vw;
+    height: 75vh;
+}
+
+h1, .month_title {
+    font-size: 3rem;
+}
+
+.title-container {
+    display: flex;
+    background-color: #B7C4CF;
+    justify-content: center;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+}
+
+.calendar-table {
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    justify-content: space-evenly;
+    background-color: #F3F3F3;
+}
+
+.week-box {
+    display: flex;
+    justify-content: center;
+    width: 14%;
+    background-color: #F3F3F3;
+}
