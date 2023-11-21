@@ -5,12 +5,13 @@ function Calendar(){
     const month = date.toLocaleString("en-US", {
         month: "long"
     });
+    const year = date.getFullYear();
 
     return (
     <div>
         <div className="calendar-wrapper">
             <div className="title-container">
-                <h1 className="month-title">{month}</h1>
+                <h1 className="month-title">{month} {year}</h1>
             </div>
             <div className="calendar-table">
                 <div className="week-box">Sunday</div>
