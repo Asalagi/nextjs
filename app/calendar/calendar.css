@@ -29,16 +29,18 @@ h1, .month_title {
 }
 
 .calendar-table {
-    display: flex;
-    flex-direction: row;
-    padding: 10px;
-    justify-content: space-evenly;
-    background-color: #F3F3F3;
+    display: inline-grid;
+    grid-template-columns: repeat(7, 1fr);
 }
 
 .week-box {
-    display: flex;
-    justify-content: center;
-    width: 14%;
+    background-color: grey;
+    padding: 1rem;
+    color: black;
+}
+
+.day-box {
     background-color: #F3F3F3;
+    padding: 1rem;
+    color: black;
 }
