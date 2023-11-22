@@ -1,4 +1,5 @@
 'use client';
+import { useState } from 'react'; 
 import './calendar.css';
 
 function Calendar(){
@@ -6,26 +7,29 @@ function Calendar(){
     let months = ["January", "February", "March", "April", "May", "June", "July",
     "August", "September", "October", "November", "December"];
     let currentMonth = months[today.getMonth()];
-    let simpleMonth = today.getMonth();
     let year = today.getFullYear();
 
     let prev = months[today.getMonth() - 1];
     let next = months[today.getMonth() + 1];
 
+    const [count, setCount] = useState(0);
+
     function handlePrevChange(){
-        alert(`previous month was ${prev}`);
+        setCount((count) => count - 1);
+        console.log(count)
     }
 
     function handleNextChange(){
-        alert(`next month was ${next}`);
+        setCount((count) => count + 1);
+        console.log(count)
     }
-    
+
     return (
     <div>
         <div className="calendar-wrapper">
             <div className="title-container">
                 <h1 className="month-title">
-                    <button onClick={handlePrevChange}>Pev</button>{currentMonth} {year}<button onClick={handleNextChange}>Next</button></h1>
+                    <button onClick={handlePrevChange}>Pev</button>{months[0]} {year}<button onClick={handleNextChange}>Next</button></h1>
             </div>
             <div className="calendar-table">
                 <div className="week-box">Sunday</div>
