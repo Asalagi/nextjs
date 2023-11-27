@@ -19,7 +19,7 @@ function Calendar(){
         <div className="calendar-wrapper">
             <div className="title-container">
                 <h1 className="month-title">
-                    <button>Pev</button>{months[0]}<button>Next</button></h1>
+                    <button className="calendar-btn">Pev</button> {months[0]} <button className="calendar-btn">Next</button></h1>
             </div>
         <div className="calendar-table">
             {dayLoop().map(days => (

@@ -5,6 +5,14 @@ body {
     background-color: white;
 }
 
+.calendar-btn {
+    background-color: #265073;
+    color: white;
+    border-radius: 80px;
+    width: 100px;
+    height: 30px;
+    border: 1px black solid;
+}
 .calendar-wrapper {
     display: flex;
     flex-direction: column;
