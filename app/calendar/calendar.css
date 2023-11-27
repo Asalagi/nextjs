@@ -13,7 +13,6 @@ body {
     border-radius: 50px;
     border: 2px black dashed;
     width: 75vw;
-    height: 75vh;
 }
 
 h1, .month_title {
@@ -34,9 +33,21 @@ h1, .month_title {
 }
 
 .week-box {
-    background-color: grey;
+    background-color: white;
+    width: 158px;
+    height: 120px;
     padding: 1rem;
     color: black;
+    border: 1px solid #F3F3F3;
+}
+.week-box:nth-child(29) {
+    background-color: white;
+    width: 158px;
+    height: 120px;
+    padding: 1rem;
+    color: black;
+    border-bottom-left-radius: 50px;
+    border: 1px solid #F3F3F3;
 }
 
 .day-box {
