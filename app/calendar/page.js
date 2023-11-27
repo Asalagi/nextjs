@@ -3,6 +3,8 @@ import { useState } from 'react';
 import './calendar.css';
 
 function Calendar(){
+    const [month, setMonth] = useState(0);
+
     const dayLoop = () => {
         let days = [];
         for (let i = 1; i <= 31; i++) {
@@ -19,7 +21,7 @@ function Calendar(){
         <div className="calendar-wrapper">
             <div className="title-container">
                 <h1 className="month-title">
-                    <button className="calendar-btn">Pev</button> {months[0]} <button className="calendar-btn">Next</button></h1>
+                    <button className="calendar-btn" onClick={()=> alert('this is a previous button')}>Pev</button> {months[month]} <button className="calendar-btn" onClick={() => alert('this is a next button')}>Next</button></h1>
             </div>
         <div className="calendar-table">
             {dayLoop().map(days => (
