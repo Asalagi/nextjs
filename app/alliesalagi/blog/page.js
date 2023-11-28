@@ -18,7 +18,13 @@ function Blog () {
                     <li><Link href="/alliesalagi/contact" className="link nav-btn">Contact</Link></li>
                  </ul>
         </div>
-          <p>{"Put blog posts here"}</p></div>
+             <div className="card-title">
+                <p className="res-title">Blog</p>
+              </div>
+              <h2>{"Calendar Project"}</h2>
+              <p>{"Check it out"} <Link href="../calendar" target="_blank" className="link">Here</Link><br/>
+              {"This calendar project is a blank slate calendar. Featuring a title with the month's name and a previous month and next month button."}</p>
+          </div>
         </div>
       </div>
     </div>
