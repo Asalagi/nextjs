@@ -17,11 +17,19 @@ function Calendar(){
     "August", "September", "October", "November", "December"];
 
     const handlePrevMonth = () => {
+        if(month - 1 < 0){
+            setMonth(month);
+        } else{
         setMonth(month - 1)
+        }
     }
 
     const handleNextMonth = () => {
-        setMonth(month + 1)
+        if(month + 1 > 11){
+            setMonth(month);
+        } else{
+            setMonth(month + 1)
+        }
     }
 
     return (
