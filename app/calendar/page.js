@@ -7,7 +7,7 @@ function Calendar(){
 
     const dayLoop = () => {
         let days = [];
-        for (let i = 1; i <= 31; i++) {
+        for (let i = 1; i <= 35; i++) {
             days.push(i);
         }
         return days;
@@ -36,17 +36,16 @@ function Calendar(){
     <div>
         <div className="calendar-wrapper">
             <div className="title-container">
-                <h1 className="month-title">
-                    <button className="calendar-btn" onClick={handlePrevMonth}>Pev</button> 
-                        {months[month]} 
-                    <button className="calendar-btn" onClick={handleNextMonth}>Next</button>
-                </h1>
+                 <button className="calendar-btn" onClick={handlePrevMonth}>{'<<'} Pev</button> 
+                    <h1 className="month-title">{months[month]}</h1>
+                <button className="calendar-btn" onClick={handleNextMonth}>Next {'>>'}</button>
             </div>
-        <div className="calendar-table">
+
+          <div className="calendar-table">
             {dayLoop().map(days => (
                 <div className='week-box' key={days}></div>
             ))}
-        </div>
+          </div>
 
         </div>
     </div>

@@ -30,7 +30,8 @@ h1, .month_title {
 .title-container {
     display: flex;
     background-color: #B7C4CF;
-    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
 }
@@ -48,6 +49,7 @@ h1, .month_title {
     color: black;
     border: 1px solid #F3F3F3;
 }
+
 .week-box:nth-child(29) {
     background-color: white;
     width: 158px;
@@ -55,6 +57,16 @@ h1, .month_title {
     padding: 1rem;
     color: black;
     border-bottom-left-radius: 50px;
+    border: 1px solid #F3F3F3;
+}
+
+.week-box:nth-child(35) {
+    background-color: white;
+    width: 158px;
+    height: 120px;
+    padding: 1rem;
+    color: black;
+    border-bottom-right-radius: 50px;
     border: 1px solid #F3F3F3;
 }
 
