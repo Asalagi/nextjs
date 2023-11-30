@@ -3,6 +3,11 @@ import Image from 'next/image';
 import '../styles.css';
 import horseshop1 from '../horseshop1.jpg';
 import horseshop2 from '../horseshop2.jpg';
+import hbmain from '../hbmain.jpg';
+import hbsaddles from '../hbsaddles.jpg';
+import hbinfo from '../hbinfo.jpg';
+import hbadd from '../hbadd.jpg';
+
 
 function Blog () {
     return (
@@ -30,9 +35,16 @@ function Blog () {
               <hr/>
               <h2>{"Horse Shop Project"}</h2>
               <p>{"I had a lot of fun with this project combiding my love for horses and love of learning programming. This project features a list of horses, stored in an array and mapped over, holding each horses information in it's own card styled with flexbox. When add cart is clicked below a horses card it is then added to the shopping cart (upper right corner)."}</p>
-              <Image src={horseshop1} className="image" fill={true} alt="horseshop1"/>
+              <div className="image-container"><Image src={horseshop1} className="image" alt="horseshop1"/></div>
               <p>{"When the cart link from the image above is clicked it will take you to a screen that has the horses you added to the cart as well as you total stored in the cart summary on the right hand side."}</p>
-              <Image src={horseshop2} className="image" fill={true} alt="horseshop2"/>
+              <div className="image-container"><Image src={horseshop2} className="image" alt="horseshop2"/></div>
+              <hr/>
+              <h2>{"Saddlery Project"}</h2>
+              <p>{"This was a fun project. This was one of the first projects I did using PostgreSQL. Saddles are stored in a datebase and I used axios.get to retrieve the saddles info and map over eachone displaying them in their own card. Each card has a 'More Details' button which takes you to a page with that saddle's information, this was done by using axios.get and express get by id. I also add a page to add saddles into the database using post request."}</p>
+              <div className="image-container"><Image src={hbmain} className="image" alt="hbmainn"/></div>
+              <div className="image-container"><Image src={hbsaddles} className="image" alt="hbsaddles"/></div>
+              <div className="image-container"><Image src={hbinfo} className="image" alt="hbinfo"/></div>
+              <div className="image-container"><Image src={hbadd} className="image" alt="hbadd"/></div>
           </div>
         </div>
       </div>
