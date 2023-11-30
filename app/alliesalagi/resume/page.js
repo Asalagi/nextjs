@@ -14,7 +14,7 @@ function Resume () {
                     <li><Link href="/alliesalagi" className="link nav-btn first">Home</Link></li>
                     <li><Link href="/alliesalagi/about" className="link nav-btn">About</Link></li>
                     <li><Link href="/alliesalagi/resume" className="link nav-btn">Resume</Link></li>
-                    <li><Link href="/alliesalagi/blog" className="link nav-btn">Blog</Link></li>
+                    <li><Link href="/alliesalagi/projects" className="link nav-btn">Projects</Link></li>
                     <li><Link href="/alliesalagi/contact" className="link nav-btn">Contact</Link></li>
                  </ul>
         </div>
