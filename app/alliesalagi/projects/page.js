@@ -8,6 +8,9 @@ import hbsaddles from '../hbsaddles.jpg';
 import hbinfo from '../hbinfo.jpg';
 import hbadd from '../hbadd.jpg';
 
+export const metadata = {
+  title: 'Allie Salagi',
+}
 
 function Blog () {
     return (

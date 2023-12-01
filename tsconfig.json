@@ -22,6 +22,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/alliesalagi/page.js", "app/alliesalagi/resume/page.js", "app/alliesalagi/projects/page.js", "app/alliesalagi/contact/page.js", "app/calendar/page.js", "app/alliesalagi/about/page.js"],
   "exclude": ["node_modules"]
 }

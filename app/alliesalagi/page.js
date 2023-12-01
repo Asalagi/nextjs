@@ -1,6 +1,10 @@
 import Link from 'next/link';
 import './styles.css';
 
+export const metadata = {
+  title: 'Allie Salagi',
+}
+
 function Page() {
   const time = new Date().getHours();
   let greeting;

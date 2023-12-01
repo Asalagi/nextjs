@@ -3,6 +3,10 @@ import '../styles.css';
 import Image from 'next/image';
 import profile from './profile.jpg';
 
+export const metadata = {
+    title: 'Allie Salagi',
+  }
+
 function About () {
     return (
     <div>

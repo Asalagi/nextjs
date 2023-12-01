@@ -1,6 +1,10 @@
 import Link from 'next/link';
 import '../styles.css';
 
+export const metadata = {
+    title: 'Allie Salagi',
+  }
+
 function Resume () {
     return (
     <div>

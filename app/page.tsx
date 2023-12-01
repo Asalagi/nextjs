@@ -1,6 +1,11 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import logo from './logo.jpg';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Allie Salagi',
+}
 
 export default function Home() {
   const dayDate = new Date().toLocaleString('en-US', {
