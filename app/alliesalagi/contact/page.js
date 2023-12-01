@@ -24,7 +24,8 @@ function Contact () {
         </div>
             <div className="card-title">
                 <p className="res-title">Contact Me</p></div>
-          <p>{"LinkedIn: "}<Link href="http://www.linkedin.com/in/allie-salagi-7a2794297" className="link">Allie Salagi</Link></p>
+          <p>{"LinkedIn: "}<Link href="http://www.linkedin.com/in/allie-salagi-7a2794297" className="link">Allie Salagi</Link><br/>
+             {"Github: "}<Link href="https://github.com/Asalagi" className="link">Commits</Link></p>
         </div>
        </div>
       </div>

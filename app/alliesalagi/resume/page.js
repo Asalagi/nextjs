@@ -36,7 +36,8 @@ function Resume () {
                         <li>{"CSS"}</li>
                         <li>{"Javascript"}</li>
                         <li>{"React"}</li>
-                        <li>{"SQL Database (PostgreSQL) Express"}</li>
+                        <li>{"SQL Database (PostgreSQL)"}</li>
+                        <li>{"Express"}</li>
                     </ul>
             <div className="card-title">
                 <p className="res-title">Experience</p></div>
