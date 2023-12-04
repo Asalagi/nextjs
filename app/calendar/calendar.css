@@ -39,7 +39,7 @@ h1, .month_title {
 .calendar-table {
     display: inline-grid;
     width: 100%;
-    height: 80vh;
+    height: 75vh;
     grid-template-columns: repeat(7, 1fr);
 }
 
@@ -64,4 +64,34 @@ h1, .month_title {
     color: black;
     border-bottom-right-radius: 50px;
     border: 1px solid #F3F3F3;
+}
+
+@media only screen and (max-width: 600px) {
+    h1, .month_title {
+        font-size: 2rem;
+    }
+
+    .title-container {
+        display: flex;
+        background-color: #B7C4CF;
+        justify-content: space-around;
+        align-items: center;
+        border-top-left-radius: 50px;
+        border-top-right-radius: 50px;
+    }
+
+    .calendar-btn {
+        background-color: #265073;
+        color: white;
+        border-radius: 80px;
+        width: 70px;
+        height: 20px;
+        border: 1px black solid;
+    }
+    .calendar-table {
+        display: inline-grid;
+        width: 100%;
+        height: 60vh;
+        grid-template-columns: repeat(7, 1fr);
+    }
 }
