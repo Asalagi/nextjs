@@ -3,15 +3,16 @@ import { useState } from 'react';
 import './styling.css';
 
 function Adventure () {
-    const [display, setDisplay] = useState (
-        <>
-        Welcome Adventurer!<br />
-        <br />
-        Are you ready for a fun adventure today? There are a few things I should mention before you start. Sometimes there are forks in the road, make sure you remember which way you are going so you don't get lost. Make sure you stay aware of your surroundings and watch out for bears, cougars, and snakes. There have been some rumors about treasures and valuable items being found.<br />
-        <br />
-        Happy trailing, fellow Adventurer!
-      </>
-      );
+  const [display, setDisplay] = useState(
+    <>
+      Welcome Adventurer!<br />
+      <br />
+      Are you ready for a fun adventure today? There are a few things I should mention before you start. Sometimes there are forks in the road, make sure you remember which way you are going so you don&apos;t get lost. Make sure you stay aware of your surroundings and watch out for bears, cougars, and snakes. There have been some rumors about treasures and valuable items being found.<br />
+      <br />
+      Happy trailing, fellow Adventurer!
+    </>
+  );
+  
 
     return (
      <div>
