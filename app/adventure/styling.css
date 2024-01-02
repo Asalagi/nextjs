@@ -26,7 +26,7 @@ body {
 
 .display-container {
     height: 90%;
-    border: px solid black;
+    border: 0px solid black;
 }
 .inner-display {
     text-align: center;
