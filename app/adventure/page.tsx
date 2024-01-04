@@ -28,9 +28,10 @@ function Adventure () {
       "You walk down the trail happy to be out in nature. What beautiful scenery!",
     ];
     const hikingPhrase = phrases[Math.trunc(Math.random() * phrases.length)];
-    setDisplay(`${hikingPhrase}`);
+    setDisplay(<>{hikingPhrase}</>);
 
     const odds = Math.trunc(Math.random() * 50) + 1;
+    console.log(odds);
   }
 
     return (
