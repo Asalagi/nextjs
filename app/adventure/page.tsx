@@ -1,4 +1,5 @@
 'use client';
+import { APP_PATH_ROUTES_MANIFEST } from '@/node_modules/next/dist/shared/lib/constants';
 import { useState } from 'react';
 import './styling.css';
 
@@ -13,6 +14,24 @@ function Adventure () {
     </>
   );
   
+  const [adventureVisible, setAdventureVisible] = useState(true);
+
+  const startAdventure = () => {
+    setDisplay(<>You begin to happily walk down the trail. You&apos;re going on an adventure!</>);
+    setAdventureVisible(false);
+  };
+
+  const keepWalking = () => {
+    let phrases = [
+      "You keep walking down the trail. The sun is shining, and the birds are happily chirping.",
+      "The day is beautiful, and you are enjoying the wonderful outdoors. You take a deep breath and take in the beauty of your surroundings.",
+      "You walk down the trail happy to be out in nature. What beautiful scenery!",
+    ];
+    const hikingPhrase = phrases[Math.trunc(Math.random() * phrases.length)];
+    setDisplay(`${hikingPhrase}`);
+
+    const odds = Math.trunc(Math.random() * 50) + 1;
+  }
 
     return (
      <div>
@@ -23,8 +42,8 @@ function Adventure () {
             </div>
             <div id="inDisplay" className="inner-display"></div>
             <div id="btn-display" className="btn-container">
-               <button id="start" className="btn center">Go Adventuring!</button>
-               <button id="hike" className="btn center hidden">Keep Walking</button>
+               <button id="start" className={`btn center ${adventureVisible ? '' : 'hidden'}`} onClick={startAdventure}>Go Adventuring!</button>
+               <button id="hike" className={`btn center ${adventureVisible ? 'hidden' : ''}`} onClick={keepWalking}>Keep Walking</button>
 
                <button id="left" className="btn center hidden">Go Left</button>
                <button id="right" className="btn center hidden">Go Right</button>
