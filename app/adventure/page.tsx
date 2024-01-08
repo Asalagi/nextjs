@@ -15,23 +15,49 @@ function Adventure () {
   );
   
   const [adventureVisible, setAdventureVisible] = useState(true);
+  const [walkingVisible, setWalkingVisable] = useState(true);
+  const [turnLeftVisible, setTurnLeftVisible] = useState(true);
+  const [turnRightVisible, setTurnRightVisible] = useState(true);
 
   const startAdventure = () => {
     setDisplay(<>You begin to happily walk down the trail. You&apos;re going on an adventure!</>);
     setAdventureVisible(false);
+    setWalkingVisable(false);
   };
 
   const keepWalking = () => {
     let phrases = [
       "You keep walking down the trail. The sun is shining, and the birds are happily chirping.",
       "The day is beautiful, and you are enjoying the wonderful outdoors. You take a deep breath and take in the beauty of your surroundings.",
-      "You walk down the trail happy to be out in nature. What beautiful scenery!",
+      "You walk down the trail happy to be out in nature. What beautiful scenery!"
     ];
     const hikingPhrase = phrases[Math.trunc(Math.random() * phrases.length)];
     setDisplay(<>{hikingPhrase}</>);
 
     const odds = Math.trunc(Math.random() * 50) + 1;
     console.log(odds);
+
+    if (odds % 7 === 0){
+      setDisplay(<>You have come to a fork in the road. Do you go left? Or do you go right? Choose your path.</>);
+      setAdventureVisible(false);
+      setWalkingVisable(true);
+      setTurnLeftVisible(false);
+      setTurnRightVisible(false);
+    }
+  }
+
+  const goLeft = () => {
+    setDisplay(<>You choose to go left and keep walking down the trail.</>);
+    setWalkingVisable(false);
+    setTurnLeftVisible(true);
+    setTurnRightVisible(true);
+  }
+
+  const goRight = () => {
+    setDisplay(<>You choose to go right and keep walking down the trail.</>);
+    setWalkingVisable(false);
+    setTurnLeftVisible(true);
+    setTurnRightVisible(true);
   }
 
     return (
@@ -44,10 +70,10 @@ function Adventure () {
             <div id="inDisplay" className="inner-display"></div>
             <div id="btn-display" className="btn-container">
                <button id="start" className={`btn center ${adventureVisible ? '' : 'hidden'}`} onClick={startAdventure}>Go Adventuring!</button>
-               <button id="hike" className={`btn center ${adventureVisible ? 'hidden' : ''}`} onClick={keepWalking}>Keep Walking</button>
+               <button id="hike" className={`btn center ${walkingVisible ? 'hidden' : ''}`} onClick={keepWalking}>Keep Walking</button>
 
-               <button id="left" className="btn center hidden">Go Left</button>
-               <button id="right" className="btn center hidden">Go Right</button>
+               <button id="left" className={`btn center ${turnLeftVisible ? 'hidden' : ''}`} onClick={goLeft}>Go Left</button>
+               <button id="right" className={`btn center ${turnRightVisible ? 'hidden' : ''}`} onClick={goRight}>Go Right</button>
 
                <button id="fight" className="btn center hidden">Fight!</button>
                <button id="run" className="btn center hidden">RUUUN!</button>
