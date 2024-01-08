@@ -21,7 +21,7 @@ body {
     font-size: 4rem;
     text-align: center;
     margin-bottom: 0px;
-    border: 1px solid black;
+    border: 0px solid black;
     color: #473C33;
 }
 
@@ -30,7 +30,7 @@ body {
     flex-direction: column;
     padding: 2%;
     background-color: #D2E3C8;
-    border: 1px solid #473C33;
+    border: 0px solid #473C33;
     width: 50vw;
     height: 50vh;
 }
@@ -75,7 +75,7 @@ body {
         font-family: Nature Impact Demo, sans-serif;
         font-size: 4rem;
         text-align: center;
-        margin-top: 2px;
+        margin-top: 4px;
         margin-bottom: 0px;
         color: #473C33;
     }
@@ -87,6 +87,6 @@ body {
         background-color: #D2E3C8;
         border: 1px solid #473C33;
         width: 90vw;
-        height: 65vh;
+        height: 70vh;
     }
 };
