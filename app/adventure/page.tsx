@@ -18,6 +18,10 @@ function Adventure () {
   const [walkingVisible, setWalkingVisable] = useState(true);
   const [turnLeftVisible, setTurnLeftVisible] = useState(true);
   const [turnRightVisible, setTurnRightVisible] = useState(true);
+  const [ignoreVisible, setIgnoreVisible] = useState(true);
+  const [investigateVisible, setInvestigateVisible] = useState(true);
+  const [fightVisible, setFightVisible] = useState(true);
+  const [runVisible, setRunVisible] = useState(true);
 
   const startAdventure = () => {
     setDisplay(<>You begin to happily walk down the trail. You&apos;re going on an adventure!</>);
@@ -43,6 +47,11 @@ function Adventure () {
       setWalkingVisable(true);
       setTurnLeftVisible(false);
       setTurnRightVisible(false);
+    } else if (odds % 9 === 0) {
+      setDisplay(<>You are happily walking down your trail until you hear a sound. Something is in the bushes. Would do you do?</>);
+      setWalkingVisable(true);
+      setIgnoreVisible(false);
+      setInvestigateVisible(false);
     }
   }
 
@@ -60,6 +69,36 @@ function Adventure () {
     setTurnRightVisible(true);
   }
 
+  const ignore = () => {
+    setDisplay(<>You ignore the sound and keep walking with a little more pep in your step.</>);
+    setWalkingVisable(false);
+    setIgnoreVisible(true);
+    setInvestigateVisible(true);
+  }
+
+  const investigate = () => {
+    let investPhrases = [
+      "You walk towards the bushes with caution. You reach to push aside branches but you see nothing. As you look down a sneaky little snake slithers over your foot. You jump! Best leave it alone.",
+      "You walk towards the bushes with caution. The russeling is getting louder. It must be something big. You prepare yourself to run. You are almost to the bush and BAM something jumps out at you. You jump back and see a cute little rabbit. You feel a little dumb, but how cute and fluffy is this little rabbit.",
+      "You walk towards the bushes with caution. The russeling is getting louder. You see a glipse of what looks like brown fur. What could it be? You take a step forward and a big bear steps out and roars. Frozen you are unsure of what to do. Fight or run?",
+      "You walk towards the bushes with caution. You reach to push aside the branches. There is nothing there, but you see a shiny penny. Now you're a penny richer!"
+    ]
+    const investigatePhrase = investPhrases[Math.trunc(Math.random() * investPhrases.length)];
+    setDisplay(<>{investigatePhrase}</>);
+
+    if(investigatePhrase === investPhrases[2]){
+      setWalkingVisable(true);
+      setFightVisible(false);
+      setRunVisible(false);
+      setIgnoreVisible(true);
+      setInvestigateVisible(true);
+    } else {
+      setWalkingVisable(false);
+      setIgnoreVisible(true);
+      setInvestigateVisible(true);
+    }
+  };
+
     return (
      <div>
         <h1 className="title">Adventurer</h1>
@@ -75,11 +114,11 @@ function Adventure () {
                <button id="left" className={`btn center ${turnLeftVisible ? 'hidden' : ''}`} onClick={goLeft}>Go Left</button>
                <button id="right" className={`btn center ${turnRightVisible ? 'hidden' : ''}`} onClick={goRight}>Go Right</button>
 
-               <button id="fight" className="btn center hidden">Fight!</button>
-               <button id="run" className="btn center hidden">RUUUN!</button>
+               <button id="fight" className={`btn center ${fightVisible ? 'hidden' : ''}`}>Fight!</button>
+               <button id="run" className={`btn center ${runVisible ? 'hidden' : ''}`}>RUUUN!</button>
 
-               <button id="ignore" className="btn center hidden">Ignore</button>
-               <button id="investigate" className="btn center hidden">investigate</button>
+               <button id="ignore" className={`btn center ${ignoreVisible ? 'hidden' : ''}`} onClick={ignore}>Ignore</button>
+               <button id="investigate" className={`btn center ${investigateVisible ? 'hidden' : ''}`} onClick={investigate}>investigate</button>
 
                <button id="turn" className="btn center hidden">Turn Around</button>
                <button id="back" className="btn center hidden">Go Back</button>
