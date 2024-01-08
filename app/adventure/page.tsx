@@ -42,7 +42,7 @@ function Adventure () {
     setBackVisible(true);
     setPictureVisible(true);
     setShootVisible(true);
-    
+
     let phrases = [
       "You keep walking down the trail. The sun is shining, and the birds are happily chirping.",
       "The day is beautiful, and you are enjoying the wonderful outdoors. You take a deep breath and take in the beauty of your surroundings.",
@@ -128,7 +128,6 @@ function Adventure () {
     setDisplay(<>{fightPhrase}</>);
 
     if(fightPhrase === fightPhrases[1]){
-      setDisplay(<></>);
       setInnerDisplay(<>YOU DIED! GAME OVER!</>)
       setFightVisible(true);
       setRunVisible(true);
@@ -142,6 +141,29 @@ function Adventure () {
       setWalkingVisable(false);
       setIgnoreVisible(true);
       setInvestigateVisible(true);
+      setHomeVisible(false);
+    }
+  };
+
+  const run = () => {
+    let runPhrases = [
+      "You see the bear lumbering towards you. You run! But you are slow. Did you really think your little human legs could outrun a bear. Well they can't. You hear the bear coming closer. You keep running until BAM the bear hits your back. You are on the ground and a bear on your back. Atleast you had a nice hike before your untimely death and you got to feed a bear a snack.",
+      "You see the bear lumbering towards you. You run! You turn and your legs start moving as fast as the possibly can. While your running a little fear toot sneaks out. It seems your body is turning on turbo speed. You swiftly turn a corner and look back and see no bear. Your feet and turbo toot has saved you. Do you continue on with your hike or call it a day and go home?"
+    ];
+
+    const running = runPhrases[Math.trunc(Math.random() * runPhrases.length)];
+    setDisplay(<>{running}</>);
+
+    if(running === runPhrases[0]){
+      setInnerDisplay(<>YOU DIED! GAME OVER!</>)
+      setFightVisible(true);
+      setRunVisible(true);
+      setWalkingVisable(true);
+      setNewVisible(false);
+    } else {
+      setFightVisible(true);
+      setRunVisible(true);
+      setWalkingVisable(false);
       setHomeVisible(false);
     }
   };
@@ -201,11 +223,35 @@ function Adventure () {
     setHackVisible(true);
     setPictureVisible(true);
     setShootVisible(true);
-  }
+  };
+
+  const picture = () => {
+    setDisplay(<>Wow look at the beauty of nature. You decide to take a picture and go on your merry way.</>);
+    setPictureVisible(true);
+    setShootVisible(true);
+    setBackVisible(true);
+    setWalkingVisable(false);
+  };
+
+  const shoot = () => {
+    let shootOdds = [
+      "Oh look at those tasty creatures. Your trigger finger is getting mighty itchy. You quietly set yourself up, point, focus and pull the trigger. BANG! Gosh dang it you missed! Do you go home feeling defeated or keep walking in hopes to find something else along your hike?",
+      "Oh look at those tasty creatures. Your trigger finger is getting mighty itchy. You quietly set yourself up, point, focus and pull the trigger. BANG! Hit! You are overjoyed with your prize. You load up your kill. Do you end your day on a good note and go home or do you continue hiking on."
+    ];
+    const shot = shootOdds[Math.trunc(Math.random() * shootOdds.length)];
+    setDisplay(<>{shot}</>);
+    setPictureVisible(true);
+    setShootVisible(true);
+    setBackVisible(true);
+    setHomeVisible(false);
+    setWalkingVisable(false);
+  };
 
   const home = () => {
     setDisplay(<>You have successfully made it home alive!</>);
     setNewVisible(false);
+    setHomeVisible(true);
+    setWalkingVisable(true);
   };
 
   const restart = () => {
@@ -228,7 +274,7 @@ function Adventure () {
                <button id="right" className={`btn center ${turnRightVisible ? 'hidden' : ''}`} onClick={goRight}>Go Right</button>
 
                <button id="fight" className={`btn center ${fightVisible ? 'hidden' : ''}`} onClick={fight}>Fight!</button>
-               <button id="run" className={`btn center ${runVisible ? 'hidden' : ''}`}>RUUUN!</button>
+               <button id="run" className={`btn center ${runVisible ? 'hidden' : ''}`} onClick={run}>RUUUN!</button>
 
                <button id="ignore" className={`btn center ${ignoreVisible ? 'hidden' : ''}`} onClick={ignore}>Ignore</button>
                <button id="investigate" className={`btn center ${investigateVisible ? 'hidden' : ''}`} onClick={investigate}>investigate</button>
@@ -237,8 +283,8 @@ function Adventure () {
                <button id="back" className={`btn center ${backVisible ? 'hidden' : ''}`} onClick={back}>Go Back</button>
                <button id="hack" className={`btn center ${hackVisible ? 'hidden' : ''}`} onClick={hack}>Hack Through</button>
 
-               <button id="picture" className={`btn center ${pictureVisible ? 'hidden' : ''}`}>Take a Picture</button>
-               <button id="shoot" className={`btn center ${shootVisible ? 'hidden' : ''}`}>Take a Shot</button>
+               <button id="picture" className={`btn center ${pictureVisible ? 'hidden' : ''}`} onClick={picture}>Take a Picture</button>
+               <button id="shoot" className={`btn center ${shootVisible ? 'hidden' : ''}`} onClick={shoot}>Take a Shot</button>
 
                <button id="home" className={`btn center ${homeVisible ? 'hidden' : ''}`} onClick={home}>Go Home</button>
                <button id="restart" className={`btn center ${newVisible ? 'hidden' : ''}`} onClick={restart}>New Game</button>
