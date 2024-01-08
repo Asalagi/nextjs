@@ -38,6 +38,11 @@ function Adventure () {
   };
 
   const keepWalking = () => {
+    setHomeVisible(true);
+    setBackVisible(true);
+    setPictureVisible(true);
+    setShootVisible(true);
+    
     let phrases = [
       "You keep walking down the trail. The sun is shining, and the birds are happily chirping.",
       "The day is beautiful, and you are enjoying the wonderful outdoors. You take a deep breath and take in the beauty of your surroundings.",
@@ -141,6 +146,63 @@ function Adventure () {
     }
   };
 
+  const turn = () => {
+    setDisplay(<>You decided to turn around and not to risk hacking throught he bushes into the unknown. You continue to happily walk back down the trail.</>);
+    setWalkingVisable(false);
+    setAroundVisible(true);
+    setBackVisible(true);
+    setHackVisible(true);
+  };
+
+  const hack = () => {
+    let animals = [
+      "deer",
+      "elk",
+      "turkeys",
+    ];
+    let hackPhrases = [
+      "You've hacked through the bushes and there are just more bushes. You should turn around.",
+      `You have been hacked through the bushes and you see a small clearing. You keep at it and step thorugh and see a beautiful valley. In the distance you see ${animals[Math.trunc(Math.random() * animals.length)]}. You approach slowly. What beautiful creatures! What would you like to do?`,
+      "You hack through the bushes and step through. Oh there's the trail. Looks like it was just the back side of the trail.",
+    ];
+
+    const hacking = hackPhrases[Math.trunc(Math.random() * hackPhrases.length)];
+    setDisplay(<>{hacking}</>);
+
+    if(hacking === hackPhrases[1]){
+      setAroundVisible(true);
+      setHackVisible(true);
+      setPictureVisible(false);
+      setShootVisible(false);
+      setBackVisible(false);
+      setWalkingVisable(false);
+    } else if (hacking === hackPhrases[0]){
+      setAroundVisible(false);
+      setHackVisible(true);
+      setPictureVisible(true);
+      setShootVisible(true);
+      setBackVisible(true);
+      setWalkingVisable(true);
+    } else {
+      setAroundVisible(true);
+      setHackVisible(true);
+      setPictureVisible(true);
+      setShootVisible(true);
+      setBackVisible(true);
+      setWalkingVisable(false);
+    }
+  };
+
+  const back = () => {
+    setDisplay(<>You decided to turn around and go back to your trail and let nature be.</>);
+    setWalkingVisable(false);
+    setAroundVisible(true);
+    setBackVisible(true);
+    setHackVisible(true);
+    setPictureVisible(true);
+    setShootVisible(true);
+  }
+
   const home = () => {
     setDisplay(<>You have successfully made it home alive!</>);
     setNewVisible(false);
@@ -171,9 +233,9 @@ function Adventure () {
                <button id="ignore" className={`btn center ${ignoreVisible ? 'hidden' : ''}`} onClick={ignore}>Ignore</button>
                <button id="investigate" className={`btn center ${investigateVisible ? 'hidden' : ''}`} onClick={investigate}>investigate</button>
 
-               <button id="turn" className={`btn center ${aroundVisible ? 'hidden' : ''}`}>Turn Around</button>
-               <button id="back" className={`btn center ${backVisible ? 'hidden' : ''}`}>Go Back</button>
-               <button id="hack" className={`btn center ${hackVisible ? 'hidden' : ''}`}>Hack Through</button>
+               <button id="turn" className={`btn center ${aroundVisible ? 'hidden' : ''}`} onClick={turn}>Turn Around</button>
+               <button id="back" className={`btn center ${backVisible ? 'hidden' : ''}`} onClick={back}>Go Back</button>
+               <button id="hack" className={`btn center ${hackVisible ? 'hidden' : ''}`} onClick={hack}>Hack Through</button>
 
                <button id="picture" className={`btn center ${pictureVisible ? 'hidden' : ''}`}>Take a Picture</button>
                <button id="shoot" className={`btn center ${shootVisible ? 'hidden' : ''}`}>Take a Shot</button>
