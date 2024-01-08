@@ -7,11 +7,21 @@ body {
     color: #473C33;
 }
 
+.outer-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 0px solid black;
+    width: 100vw;
+}
+
 .title {
     font-family: Nature Impact Demo, sans-serif;
     font-size: 4rem;
     text-align: center;
     margin-bottom: 0px;
+    border: 0px solid black;
     color: #473C33;
 }
 
@@ -58,3 +68,24 @@ body {
 .hidden{
     display: none;
 }
+
+
+@media only screen and (max-width: 825px) {
+    .title {
+        font-family: Nature Impact Demo, sans-serif;
+        font-size: 4rem;
+        text-align: center;
+        margin-bottom: 0px;
+        color: #473C33;
+    }
+
+    .container-main {
+        display: flex;
+        flex-direction: column;
+        padding: 2%;
+        background-color: #D2E3C8;
+        border: 1px solid #473C33;
+        width: 90vw;
+        height: 75vh;
+    }
+};

@@ -260,6 +260,7 @@ function Adventure () {
 
     return (
      <div>
+       <div className="outer-container">
         <h1 className="title">Adventurer</h1>
         <div className="container-main">
             <div id="display" className="display-container">
@@ -290,6 +291,7 @@ function Adventure () {
                <button id="restart" className={`btn center ${newVisible ? 'hidden' : ''}`} onClick={restart}>New Game</button>
             </div>           
         </div>
+       </div>
       </div>
     );
 };
