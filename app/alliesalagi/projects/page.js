@@ -32,6 +32,10 @@ function Blog () {
              <div className="card-title">
                 <p className="res-title">Projects</p>
               </div>
+              <h2>{"Adventurer Project"}</h2>
+              <p>{"Check it out"} <Link href="../adventure" target="_blank" className="link">Here</Link><br/>
+              {"This is a fun adventure game that gives several randomized scenerios. I had a lot of fun building this and hope you have as much fun playing it as I had building it. Happy hiking!"}</p>
+              <hr/>
               <h2>{"Calendar Project"}</h2>
               <p>{"Check it out"} <Link href="../calendar" target="_blank" className="link">Here</Link><br/>
               {"This calendar project is a blank slate calendar. Featuring a title with the month's name and a previous month and next month button."}</p>
