@@ -13,6 +13,7 @@ function Adventure () {
       Happy trailing, fellow Adventurer!
     </>
   );
+  const [innerDisplay, setInnerDisplay] = useState(<></>);
   
   const [adventureVisible, setAdventureVisible] = useState(true);
   const [walkingVisible, setWalkingVisable] = useState(true);
@@ -22,6 +23,13 @@ function Adventure () {
   const [investigateVisible, setInvestigateVisible] = useState(true);
   const [fightVisible, setFightVisible] = useState(true);
   const [runVisible, setRunVisible] = useState(true);
+  const [aroundVisible, setAroundVisible] = useState(true);
+  const [backVisible, setBackVisible] = useState(true);
+  const [hackVisible, setHackVisible] = useState(true);
+  const [pictureVisible, setPictureVisible] = useState(true);
+  const [shootVisible, setShootVisible] = useState(true);
+  const [homeVisible, setHomeVisible] = useState(true);
+  const [newVisible, setNewVisible] = useState(true);
 
   const startAdventure = () => {
     setDisplay(<>You begin to happily walk down the trail. You&apos;re going on an adventure!</>);
@@ -36,8 +44,6 @@ function Adventure () {
       "You walk down the trail happy to be out in nature. What beautiful scenery!"
     ];
     const hikingPhrase = phrases[Math.trunc(Math.random() * phrases.length)];
-    setDisplay(<>{hikingPhrase}</>);
-
     const odds = Math.trunc(Math.random() * 50) + 1;
     console.log(odds);
 
@@ -52,29 +58,38 @@ function Adventure () {
       setWalkingVisable(true);
       setIgnoreVisible(false);
       setInvestigateVisible(false);
+    } else if (odds % 10 === 0){
+      setDisplay(<>You&apos;re trail is becoming narrow. You notice the bushes and trees are getting thicker in front of you. Oh no! It looks like you have come to a deadend. What would you like to do.</>);
+      setWalkingVisable(true);
+      setAroundVisible(false);
+      setBackVisible(false);
+      setHackVisible(false);
+    } else {
+      setDisplay(<>{hikingPhrase}</>);
+      setWalkingVisable(false);
     }
-  }
+  };
 
   const goLeft = () => {
     setDisplay(<>You choose to go left and keep walking down the trail.</>);
     setWalkingVisable(false);
     setTurnLeftVisible(true);
     setTurnRightVisible(true);
-  }
+  };
 
   const goRight = () => {
     setDisplay(<>You choose to go right and keep walking down the trail.</>);
     setWalkingVisable(false);
     setTurnLeftVisible(true);
     setTurnRightVisible(true);
-  }
+  };
 
   const ignore = () => {
     setDisplay(<>You ignore the sound and keep walking with a little more pep in your step.</>);
     setWalkingVisable(false);
     setIgnoreVisible(true);
     setInvestigateVisible(true);
-  }
+  };
 
   const investigate = () => {
     let investPhrases = [
@@ -99,6 +114,42 @@ function Adventure () {
     }
   };
 
+  const fight = () => {
+    let fightPhrases = [
+      "You see the bear. It stands up on it's hide legs and lets out a big roar. It's go time! This is it! You've always wanted to try and punch a bear. The bear comes are you and you punch. You have fists of steal and stone and you slam your fist into the bears face. It stops stares are you like you are a psycho for punching a bear and turns around and walks away. You won! Would you like to go home and tell your friends you punched a bear or keep hiking?",
+      "You see the bear. It stands up on it's hide legs and lets out a big roar. It's go time! You prepare yourself to take down this beast of fur and anger. You run and strike the bear but he is a bear and you are a human. A humane snack. The bear grapples you and you are now a bear chew toy. Well atleast you tried."
+    ];
+    const fightPhrase = fightPhrases[Math.trunc(Math.random() * fightPhrases.length)];
+    setDisplay(<>{fightPhrase}</>);
+
+    if(fightPhrase === fightPhrases[1]){
+      setDisplay(<></>);
+      setInnerDisplay(<>YOU DIED! GAME OVER!</>)
+      setFightVisible(true);
+      setRunVisible(true);
+      setWalkingVisable(true);
+      setIgnoreVisible(true);
+      setInvestigateVisible(true);
+      setNewVisible(false);
+    } else {
+      setFightVisible(true);
+      setRunVisible(true);
+      setWalkingVisable(false);
+      setIgnoreVisible(true);
+      setInvestigateVisible(true);
+      setHomeVisible(false);
+    }
+  };
+
+  const home = () => {
+    setDisplay(<>You have successfully made it home alive!</>);
+    setNewVisible(false);
+  };
+
+  const restart = () => {
+    location.reload();
+  }
+
     return (
      <div>
         <h1 className="title">Adventurer</h1>
@@ -106,7 +157,7 @@ function Adventure () {
             <div id="display" className="display-container">
                 <p>{display}</p>
             </div>
-            <div id="inDisplay" className="inner-display"></div>
+            <div id="inDisplay" className="inner-display">{innerDisplay}</div>
             <div id="btn-display" className="btn-container">
                <button id="start" className={`btn center ${adventureVisible ? '' : 'hidden'}`} onClick={startAdventure}>Go Adventuring!</button>
                <button id="hike" className={`btn center ${walkingVisible ? 'hidden' : ''}`} onClick={keepWalking}>Keep Walking</button>
@@ -114,21 +165,21 @@ function Adventure () {
                <button id="left" className={`btn center ${turnLeftVisible ? 'hidden' : ''}`} onClick={goLeft}>Go Left</button>
                <button id="right" className={`btn center ${turnRightVisible ? 'hidden' : ''}`} onClick={goRight}>Go Right</button>
 
-               <button id="fight" className={`btn center ${fightVisible ? 'hidden' : ''}`}>Fight!</button>
+               <button id="fight" className={`btn center ${fightVisible ? 'hidden' : ''}`} onClick={fight}>Fight!</button>
                <button id="run" className={`btn center ${runVisible ? 'hidden' : ''}`}>RUUUN!</button>
 
                <button id="ignore" className={`btn center ${ignoreVisible ? 'hidden' : ''}`} onClick={ignore}>Ignore</button>
                <button id="investigate" className={`btn center ${investigateVisible ? 'hidden' : ''}`} onClick={investigate}>investigate</button>
 
-               <button id="turn" className="btn center hidden">Turn Around</button>
-               <button id="back" className="btn center hidden">Go Back</button>
-               <button id="hack" className="btn center hidden">Hack Through</button>
+               <button id="turn" className={`btn center ${aroundVisible ? 'hidden' : ''}`}>Turn Around</button>
+               <button id="back" className={`btn center ${backVisible ? 'hidden' : ''}`}>Go Back</button>
+               <button id="hack" className={`btn center ${hackVisible ? 'hidden' : ''}`}>Hack Through</button>
 
-               <button id="picture" className="btn center hidden">Take a Picture</button>
-               <button id="shoot" className="btn center hidden">Take a Shot</button>
+               <button id="picture" className={`btn center ${pictureVisible ? 'hidden' : ''}`}>Take a Picture</button>
+               <button id="shoot" className={`btn center ${shootVisible ? 'hidden' : ''}`}>Take a Shot</button>
 
-               <button id="home" className="btn center hidden">Go Home</button>
-               <button id="restart" className="btn center hidden">New Game</button>
+               <button id="home" className={`btn center ${homeVisible ? 'hidden' : ''}`} onClick={home}>Go Home</button>
+               <button id="restart" className={`btn center ${newVisible ? 'hidden' : ''}`} onClick={restart}>New Game</button>
             </div>           
         </div>
       </div>
