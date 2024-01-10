@@ -29,19 +29,20 @@ body {
     display: flex;
     flex-direction: column;
     padding: 2%;
-    background-color: #444444;
+    background-color: #E4E3E3;
     border: 1px solid #EBEBEB;
     width: 50vw;
     height: 50vh;
 }
 
-.display-container {
+.display {
+    padding: 2%;
     height: 90%;
     border: 0px solid black;
 }
 .inner-display {
     text-align: center;
-    padding: 1%;
+    padding: 2%;
     font-weight: bold;
     border: 0px solid black;
 }
@@ -58,9 +59,8 @@ body {
     flex-direction: row;
     align-items: center;
     justify-self: space-between;
-    background-color: #EBEBEB;
     border: 0px solid black;
-    width: 50%;
+    width: 100%;
 }
 .life-bar {
     display: flex;
@@ -69,19 +69,30 @@ body {
     background-image: linear-gradient(to right, #b51c39, #ce4231, #e06525, #ec8914, #f0ae00, #e2bc00, #d2c900, #bed600, #9ece01, #7cc50c, #58bb18, #24b123);
     border: 1px solid #212121;
     height: 10px;
-    width: 250px;
+    width: 400px;
 }
 .life-tick {
     height: 10px;
     background-color: #212121;
 }
 
+.name {
+    font-family: 'Brush Script MT', cursive;
+    font-size: 2rem;
+    background-color: #E4E3E3;
+    border: 0px solid #212121;
+    border-bottom: 2px solid #212121;
+    width: 250px;
+    height: 30px;
+
+}
+
 .btn {
     padding: .5rem;
     border: 1px solid #212121;
     border-radius: 1rem;
-    background-color: #EBEBEB;
-    color: #212121;
+    background-color: #444444;
+    color: white;
 }
 .btn:hover {
     background-color: #931A25;
