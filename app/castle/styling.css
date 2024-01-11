@@ -32,7 +32,7 @@ body {
     background-color: #E4E3E3;
     border: 1px solid #EBEBEB;
     width: 50vw;
-    height: 50vh;
+    height: 70vh;
 }
 
 .display {
@@ -93,6 +93,7 @@ body {
     border-radius: 1rem;
     background-color: #444444;
     color: white;
+    width: 100px;
 }
 .btn:hover {
     background-color: #931A25;
