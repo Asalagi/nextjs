@@ -73,6 +73,12 @@ function Castle() {
         setMpOne(false);
         setMpCabin(true);
         setMpWalkOne(true);
+      };
+
+      const cabin = () => {
+        setDisplay('You walk up to the cabin. As you raise your hand to knock on the door, it suddenly begins to slowly open. "hello", you call quietly. You see a little old lady, long unkep wavy grey hair. "hello, yougin. come in, come in." She calls to you, waving you over. You take a deep breath and step into the cabin. The door closes behind you.');
+        setMpCabin(false);
+        setMpWalkOne(false);
       }
       //mpTravelTwo
       //mpTravelThree
@@ -99,7 +105,7 @@ function Castle() {
                     <button className="btn hidden">Go Iceway</button>
                     <button className={`btn ${MountainPath ? '' : 'hidden'}`} onClick={mpStart}>Go Mountain Pass</button>
                     <button className={`btn ${mpOne ? '' : 'hidden'}`} onClick={mpTravelOne}>Continue On</button>
-                    <button className={`btn ${mpCabin ? '' : 'hidden'}`}>Stop at the Cabin</button>
+                    <button className={`btn ${mpCabin ? '' : 'hidden'}`} onClick={cabin}>Stop at the Cabin</button>
                     <button className={`btn ${mpWalkOne ? '' : 'hidden'}`}>Walk to the Forest</button>
                     <button className="btn hidden"></button>
                     <button className="btn hidden"></button>
