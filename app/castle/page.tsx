@@ -10,11 +10,14 @@ function Castle() {
 
     const [start, setStart] = useState(true);
     const [MountainPath, setMoutainPath] = useState(false);
-
+    const [mpOne, setMpOne] = useState(false);
+    const [mpCabin, setMpCabin] = useState(false);
+    const [mpWalkOne, setMpWalkOne] = useState(false);
+ 
     const hitPoints = Math.trunc(Math.random() * 10) + 1;
     const healPoints = Math. trunc(Math.random() * 15) + 1;
 
-    const playerChange = (event) => {
+    const playerChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setPlayer(event.target.value);
     }
 
@@ -59,9 +62,18 @@ function Castle() {
 
       //mpStart
       const mpStart = () => {
-        setDisplay(`${player}, you have accepted this task, chosen your path and possibly your fate. Do well and bring back The Stone and you will be rewarded.`)
+        setDisplay(`${player}, you have accepted this task, chosen your path and possibly your fate. Do well and bring back The Stone and you will be rewarded.`);
+        setMpOne(true);
+        setMoutainPath(false);
       }
+
       //mpTravelOne
+      const mpTravelOne = () => {
+        setDisplay("Walking on your merry way down the Mountain Pass road. Things are looking good, the sky is bright and sunny. You see the forest a head of you. Off to your right you see a small cabin, smoke gently rising from the chimney. Curious, do you stop at the cabin or continue on the road into the forrest?");
+        setMpOne(false);
+        setMpCabin(true);
+        setMpWalkOne(true);
+      }
       //mpTravelTwo
       //mpTravelThree
       //mpTravelFour
@@ -86,9 +98,9 @@ function Castle() {
                     <button className="btn hidden" onClick={heal}>Heal</button>
                     <button className="btn hidden">Go Iceway</button>
                     <button className={`btn ${MountainPath ? '' : 'hidden'}`} onClick={mpStart}>Go Mountain Pass</button>
-                    <button className="btn hidden"></button>
-                    <button className="btn hidden"></button>
-                    <button className="btn hidden"></button>
+                    <button className={`btn ${mpOne ? '' : 'hidden'}`} onClick={mpTravelOne}>Continue On</button>
+                    <button className={`btn ${mpCabin ? '' : 'hidden'}`}>Stop at the Cabin</button>
+                    <button className={`btn ${mpWalkOne ? '' : 'hidden'}`}>Walk to the Forest</button>
                     <button className="btn hidden"></button>
                     <button className="btn hidden"></button>
                     <button className="btn hidden"></button>
