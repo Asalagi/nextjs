@@ -14,6 +14,7 @@ function Castle() {
     const [mpCabin, setMpCabin] = useState(false);
     const [mpWalkOne, setMpWalkOne] = useState(false);
     const [takeHeal, setTakeHeal] = useState(false);
+    const [healPotiion, setHealPotion] = useState(false);
  
     const hitPoints = Math.trunc(Math.random() * 10) + 1;
     const healPoints = Math. trunc(Math.random() * 15) + 1;
@@ -55,6 +56,30 @@ function Castle() {
         }
       };
 
+      const takePotion = () => {
+        setHealPotion(false);
+        const healAmount1 = Math.trunc(Math.random() * 10 + 1);
+        const healAmount2 = Math.trunc(Math.random() * 10 + 1);
+        const healAmount3 = Math.trunc(Math.random() * 10 + 1);
+        const healAmount4 = Math.trunc(Math.random() * 10 + 1);
+        const healAmount = healAmount1 + healAmount2 + healAmount3 + healAmount4 + 4;
+        
+        if (lifeTick > 0) {
+        setLifeTick((prevLifeTick) => {
+          const newLifeTick = prevLifeTick - healAmount;
+          setDisplay(`You take a healing potion and heal ${healAmount} points.`);
+          console.log(newLifeTick);
+    
+          if (newLifeTick <= 0) {
+              setLifeTick(0);
+              setInnerDisplay('You have been fully healed!')
+          }
+
+          return newLifeTick;
+        });
+      }
+    };
+
       const startGame = () => {
         setDisplay('Let the game begin. Choose your path.')
         setStart(false);
@@ -82,6 +107,11 @@ function Castle() {
         setMpWalkOne(false);
         setTakeHeal(true);
       }
+      const potion = () => {
+        setDisplay('You gratefully take the healing potion, wave to the old lady and set off into the forest.');
+        setHealPotion(true);
+      }
+
       //mpTravelTwo
       //mpTravelThree
       //mpTravelFour
@@ -97,7 +127,7 @@ function Castle() {
                     <div className="life-bar">
                         <div className="life-tick" style={{ width: `${lifeTick}%` }}></div>
                     </div> 
-                    <button className={`btn-two ${takeHeal ? '' : 'hidden'}`}>🧪</button>
+                    <button className={`btn-two ${healPotiion ? '' : 'hidden'}`} onClick={takePotion}>🧪</button>
                 </div>
                 <div className="display">{display}</div>
                 <div className="inner-display">{innerDisplay}</div>
@@ -110,7 +140,7 @@ function Castle() {
                     <button className={`btn ${mpOne ? '' : 'hidden'}`} onClick={mpTravelOne}>Continue On</button>
                     <button className={`btn ${mpCabin ? '' : 'hidden'}`} onClick={cabin}>Stop at the Cabin</button>
                     <button className={`btn ${mpWalkOne ? '' : 'hidden'}`}>Walk to the Forest</button>
-                    <button className={`btn ${takeHeal ? '' : 'hidden'}`}>Take Healing Potion</button>
+                    <button className={`btn ${takeHeal ? '' : 'hidden'}`} onClick={potion}>Take Healing Potion</button>
                     <button className="btn hidden"></button>
                     <button className="btn hidden"></button>
                     <button className="btn hidden"></button>
