@@ -15,6 +15,7 @@ function Castle() {
     const [mpWalkOne, setMpWalkOne] = useState(false);
     const [takeHeal, setTakeHeal] = useState(false);
     const [healPotiion, setHealPotion] = useState(false);
+
  
     const hitPoints = Math.trunc(Math.random() * 10) + 1;
     const healPoints = Math. trunc(Math.random() * 15) + 1;
@@ -110,6 +111,8 @@ function Castle() {
       const potion = () => {
         setDisplay('You gratefully take the healing potion, wave to the old lady and set off into the forest.');
         setHealPotion(true);
+        setTakeHeal(false);
+        setMpWalkOne(true);
       }
 
       //mpTravelTwo
