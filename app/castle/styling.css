@@ -59,7 +59,7 @@ body {
     flex-direction: row;
     align-items: center;
     justify-self: space-between;
-    border: 0px solid black;
+    border: 1px solid black;
     width: 100%;
 }
 .life-bar {
@@ -98,6 +98,26 @@ body {
 .btn:hover {
     background-color: #931A25;
 }
+
+.btn-two {
+    height: 2rem;
+    width: 2rem;
+    border: 0px solid #212121;
+    border-radius: 2rem;
+    background-color: #E4E3E3;
+    color: white;
+    font-size: 1rem;
+}
+.btn-two:hover {
+    height: 2rem;
+    width: 2rem;
+    background-image:
+      radial-gradient(
+        circle closest-side,
+        yellow,
+        #E4E3E3
+      );
+}  
 .hidden{
     display: none;
 }

@@ -13,6 +13,7 @@ function Castle() {
     const [mpOne, setMpOne] = useState(false);
     const [mpCabin, setMpCabin] = useState(false);
     const [mpWalkOne, setMpWalkOne] = useState(false);
+    const [takeHeal, setTakeHeal] = useState(false);
  
     const hitPoints = Math.trunc(Math.random() * 10) + 1;
     const healPoints = Math. trunc(Math.random() * 15) + 1;
@@ -79,6 +80,7 @@ function Castle() {
         setDisplay('You walk up to the cabin. As you raise your hand to knock on the door, it suddenly begins to slowly open. "hello", you call quietly. You see a little old lady, long unkep wavy grey hair. "hello, yougin. come in, come in." She calls to you, waving you over. You take a deep breath and step into the cabin. The door closes behind you.');
         setMpCabin(false);
         setMpWalkOne(false);
+        setTakeHeal(true);
       }
       //mpTravelTwo
       //mpTravelThree
@@ -95,6 +97,7 @@ function Castle() {
                     <div className="life-bar">
                         <div className="life-tick" style={{ width: `${lifeTick}%` }}></div>
                     </div> 
+                    <button className={`btn-two ${takeHeal ? '' : 'hidden'}`}>🧪</button>
                 </div>
                 <div className="display">{display}</div>
                 <div className="inner-display">{innerDisplay}</div>
@@ -107,6 +110,7 @@ function Castle() {
                     <button className={`btn ${mpOne ? '' : 'hidden'}`} onClick={mpTravelOne}>Continue On</button>
                     <button className={`btn ${mpCabin ? '' : 'hidden'}`} onClick={cabin}>Stop at the Cabin</button>
                     <button className={`btn ${mpWalkOne ? '' : 'hidden'}`}>Walk to the Forest</button>
+                    <button className={`btn ${takeHeal ? '' : 'hidden'}`}>Take Healing Potion</button>
                     <button className="btn hidden"></button>
                     <button className="btn hidden"></button>
                     <button className="btn hidden"></button>
