@@ -1,31 +1,24 @@
 * {
+    font-size: 65%;
+    box-sizing: border-box, inherit;
     margin: 0;
     padding: 0;
-    box-sizing: inherit;
-}
-
-html {
-    font-size: 63%;
-    box-sizing: border-box;
 }
 
 body {
-    font-family: sans-serif;
-    font-weight: 400;
-    height: 100vh;
-    color: black;
-    background-image: linear-gradient(to top left, #AFC8AD 0%, #61A3BA 100%);
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 100vh;
+    color: black;
+    background-color: #EEF5FF;
 }
 
-
-main {
+.main {
     position: relative;
     width: 100rem;
     height: 60rem;
-    background-color: #9AD0C2;
+    background-color: #B4D4FF;
     backdrop-filter: blur(200px);
     filter: blur();
     box-shadow: 0 3rem 5rem rgba(0,0,0, 0.25);
@@ -47,6 +40,7 @@ main {
 .name {
     position: relative;
     font-size: 4rem;
+    font-family: 'Courier New', Courier, monospace;
     text-transform: uppercase;
     letter-spacing: 1px;
     word-spacing: 2px;
@@ -60,28 +54,29 @@ main {
     margin-bottom: auto;
 }
 
+/* switch on click*/
 .player--active {
-    background-color: #ECF4D6;
+    background-color: #86B6F6;
 }
-
+/* switch on click*/
 .player--active .name {
     font-weight: 700;
 }
-
+/* switch on click*/
 .player--active .score {
     font-weight: 400;
 }
-
+/* switch on click*/
 .player--active .current {
     opacity: 1;
 }
 
 .current {
-    background-color: #265073;
+    background-color: #176B87;
     opacity: 0.8;
     border-radius: 9px;
     color: #ffffff;
-    width: 65%;
+    width: 50%;
     padding: 2rem;
     text-align: center;
     transition: all 0.75s;
@@ -91,7 +86,7 @@ main {
     text-transform: uppercase;
     margin-bottom: 1rem;
     font-size: 1.7rem;
-    color: #ddd;
+    color: #dddddd;
 }
 
 .current-score{
@@ -102,17 +97,17 @@ main {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    color: #444444;
+    color: #000000;
     background: none;
     border: none;
-    font-family: inherit;
+    font-family: 'Courier New', Courier, monospace;
     font-size: 1.8rem;
     text-transform: uppercase;
     font-weight: 400;
     transition: all 0.2s;
 
     background-color: #ffffff;
-    background-color: rgba(255,255,255,0.6);
+    background-color: #EEEEEE;
     backdrop-filter: blur(10px);
 
     padding: 0.7rem 2.5rem;
@@ -124,14 +119,15 @@ main {
     top: 4rem;
 }
 .btn--roll {
-    top: 39.3rem;
+    top: 40rem;
 }
 .btn--hold {
-    top: 46.1rem
+    top: 46rem
 }
 
-.btn:focus {
-    outline: none;
+.btn:hover {
+    background-color: #176B87;
+    transition: 3s;
 }
 
 .dice {
@@ -144,15 +140,18 @@ main {
     box-shadow: 0 2rem 5rem rgba(0,0,0, 0.2);
 }
 
+/* onchange */
 .player--winner {
     background-color: #2D9596;
     color: #A8DF8E;
 }
 
+/* onchange */
 .player--winnder .name {
     font-weight: 700;
 }
 
+/* onchange */
 .hidden {
     display: none;
 }
