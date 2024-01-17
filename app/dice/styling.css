@@ -11,7 +11,7 @@ body {
     justify-content: center;
     height: 100vh;
     color: black;
-    background-color: #EEF5FF;
+    background-color: #176B87;
 }
 
 .main {
@@ -106,8 +106,7 @@ body {
     font-weight: 400;
     transition: all 0.2s;
 
-    background-color: #ffffff;
-    background-color: #EEEEEE;
+    background-color: #EEF5FF;
     backdrop-filter: blur(10px);
 
     padding: 0.7rem 2.5rem;
@@ -127,6 +126,7 @@ body {
 
 .btn:hover {
     background-color: #176B87;
+    color: #ffffff;
     transition: 3s;
 }
 
