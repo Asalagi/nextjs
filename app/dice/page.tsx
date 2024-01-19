@@ -18,7 +18,8 @@ function DiceGame() {
   
 
     const switchPlayer = () => {
-        setActivePlayer((prevActivePlayer) => (prevActivePlayer === 0 ? 1 : 0));
+        // setCurrentDice(currentDice);
+        setActivePlayer(activePlayer === 0 ? 1 : 0);
     };
 
     const roll = () => {
@@ -46,12 +47,13 @@ function DiceGame() {
     };
 
     const hold = () => {
-        const newScores = [...currentScore];
-        newScores[activePlayer] += currentDice;
-        setCurrentScore(newScores);
-        setCurrentDice(0);
-    
-        setActivePlayer((prevActivePlayer) => (prevActivePlayer === 0 ? 1 : 0));
+        if (currentDice !== 1) {
+          const newScores = [...currentScore];
+          newScores[activePlayer] += currentDice;
+          setCurrentScore(newScores);
+      
+          switchPlayer();
+        }
       };
 
     return (
