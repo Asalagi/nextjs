@@ -1,4 +1,5 @@
-import './styling.css';
+'use client'
+import React, { useState } from 'react';
 import Image from 'next/image';
 import diceOne from './dice-1.png';
 import diceTwo from './dice-2.png';
@@ -6,9 +7,34 @@ import diceThree from './dice-3.png';
 import diceFour from './dice-4.png';
 import diceFive from './dice-5.png';
 import diceSix from './dice-6.png';
+import './styling.css';
 
 
 function DiceGame(){
+    const [currentDice, setCurrentDice] = useState(0);
+    const [diceStart, setDiceStart] = useState(false);
+    const [startNew, setStartNew] = useState([0, 0])
+    const [activePlayer, setActivePlayer] = useState(0);
+
+    const roll = () => {
+        const diceValue = Math.trunc(Math.random() *6)+ 1;
+        setCurrentDice(diceValue);
+        setDiceStart(true);
+    };
+
+    const newGame = () => {
+        setDiceStart(false);
+        setStartNew([0, 0]);
+    };
+
+    const hold = () => {
+        const newScores = [...startNew];
+        newScores[activePlayer] += currentDice;
+        setStartNew(newScores);
+
+        setActivePlayer((prevActivePlayer) => (prevActivePlayer === 0 ? 1 : 0));
+      };
+
     return (
         <div>
           <div className="main">
@@ -29,15 +55,28 @@ function DiceGame(){
                 </div>
             </div>
 
-            <Image src={diceOne} className="dice hidden" alt="dice"/>
-            <Image src={diceTwo} className="dice hidden" alt="dice"/>
-            <Image src={diceThree} className="dice hidden" alt="dice"/>
-            <Image src={diceFour} className="dice hidden" alt="dice"/>
-            <Image src={diceFive} className="dice hidden" alt="dice"/>
-            <Image src={diceSix} className="dice hidden" alt="dice"/>
-            <button className="btn btn--new">New Game</button>
-            <button className="btn btn--roll">Roll Dice</button>
-            <button className="btn btn--hold">Hold</button>
+            {diceStart && (
+          <Image
+            src={
+              currentDice === 1
+                ? diceOne
+                : currentDice === 2
+                ? diceTwo
+                : currentDice === 3
+                ? diceThree
+                : currentDice === 4
+                ? diceFour
+                : currentDice === 5
+                ? diceFive
+                : diceSix
+            }
+            className="dice"
+            alt="dice"
+          />
+        )}
+            <button className="btn btn--new" onClick={newGame}>New Game</button>
+            <button className="btn btn--roll" onClick={roll}>Roll Dice</button>
+            <button className="btn btn--hold" onClick={hold}>Hold</button>
            </div>
         </div>
     );
