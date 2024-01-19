@@ -55,19 +55,19 @@ body {
 }
 
 /* switch on click*/
-.player--active {
+.player-active {
     background-color: #468B97;
 }
 /* switch on click*/
-.player--active .name {
+.player-active .name {
     font-weight: 700;
 }
 /* switch on click*/
-.player--active .score {
+.player-active .score {
     font-weight: 400;
 }
 /* switch on click*/
-.player--active .current {
+.player-active .current {
     opacity: 1;
 }
 

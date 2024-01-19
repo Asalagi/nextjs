@@ -10,48 +10,67 @@ import diceSix from './dice-6.png';
 import './styling.css';
 
 
-function DiceGame(){
+function DiceGame() {
     const [currentDice, setCurrentDice] = useState(0);
     const [diceStart, setDiceStart] = useState(false);
-    const [startNew, setStartNew] = useState([0, 0])
+    const [currentScore, setCurrentScore] = useState([0, 0]);
     const [activePlayer, setActivePlayer] = useState(0);
+  
+
+    const switchPlayer = () => {
+        setActivePlayer((prevActivePlayer) => (prevActivePlayer === 0 ? 1 : 0));
+    };
 
     const roll = () => {
-        const diceValue = Math.trunc(Math.random() *6)+ 1;
-        setCurrentDice(diceValue);
-        setDiceStart(true);
+      const diceValue = Math.trunc(Math.random() * 6) + 1;
+      setCurrentDice(diceValue);
+      setDiceStart(true);
+  
+      if (diceValue !== 1) {
+        setCurrentScore((prevScores) => {
+          const newScores = [...prevScores];
+          newScores[activePlayer] += diceValue;
+          return newScores;
+        });
+
+      } else {
+        switchPlayer();
+      }
     };
 
     const newGame = () => {
         setDiceStart(false);
-        setStartNew([0, 0]);
+        setCurrentDice(0);
+        setCurrentScore([0, 0]);
+        setActivePlayer(0);
     };
 
     const hold = () => {
-        const newScores = [...startNew];
+        const newScores = [...currentScore];
         newScores[activePlayer] += currentDice;
-        setStartNew(newScores);
-
+        setCurrentScore(newScores);
+        setCurrentDice(0);
+    
         setActivePlayer((prevActivePlayer) => (prevActivePlayer === 0 ? 1 : 0));
       };
 
     return (
         <div>
           <div className="main">
-            <div className="player player--0 player--active">
+            <div className={`player ${activePlayer ? '' : 'player-active'}`}>
                 <h2 className="name" id="name--0">Player 1</h2>
-                <p className="score" id="score--0">0</p>
+                <p className="score" id="score--0">{currentScore[0]}</p>
                 <div className="current">
                     <p className="current-label">Current</p>
-                    <p className="current-score" id="current--0">0</p>
+                    <p className="current-score" id="current--0">{activePlayer === 0 ? currentDice : 0}</p>
                 </div>
             </div>
-            <div className="player player--1">
+            <div className={`player ${activePlayer ? 'player-active' : ''}`}>
                 <h2 className="name" id="name--1">Player 2</h2>
-                <p className="score" id="score--1">0</p>
+                <p className="score" id="score--1">{currentScore[1]}</p>
                 <div className="current">
                     <p className="current-label">Current</p>
-                    <p className="current-score" id="current--1">0</p>
+                    <p className="current-score" id="current--1">{activePlayer === 1 ? currentDice : 0}</p>
                 </div>
             </div>
 
