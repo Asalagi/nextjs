@@ -16,6 +16,8 @@ function DiceGame() {
     const [currentScore, setCurrentScore] = useState([0, 0]);
     const [totalScore, setTotalScore] = useState([0, 0]);
     const [activePlayer, setActivePlayer] = useState(0);
+
+    const diceImages = [diceOne, diceTwo, diceThree, diceFour, diceFive, diceSix];
   
 
     const switchPlayer = () => {
@@ -35,6 +37,11 @@ function DiceGame() {
             return newScores;
         });
         } else {
+            setCurrentScore((prevScores) => {
+                const newScores = [...prevScores];
+                newScores[activePlayer] = 0;
+                return newScores;
+            });
             switchPlayer();
         }
     };
@@ -43,17 +50,24 @@ function DiceGame() {
         setDiceStart(false);
         setCurrentDice(0);
         setCurrentScore([0, 0]);
+        setTotalScore([0, 0]);
         setActivePlayer(0);
     };
 
     const hold = () => {
-        const newCurrentScores = [...currentScore];
-        newCurrentScores[activePlayer] += totalScore[activePlayer];
-        setCurrentScore(newCurrentScores);
-    
-        setCurrentDice(0);
+        const newTotalScores = [...totalScore];
+        newTotalScores[activePlayer] += currentScore[activePlayer];
+        setTotalScore(newTotalScores);
+      
+        setCurrentScore((prevScores) => {
+          const newScores = [...prevScores];
+          newScores[activePlayer] = 0;
+          return newScores;
+        });
+      
+        setCurrentDice(currentDice);
         switchPlayer();
-    };
+      };
 
     return (
         <div>
@@ -68,32 +82,20 @@ function DiceGame() {
             </div>
             <div className={`player ${activePlayer ? 'player-active' : ''}`}>
                 <h2 className="name" id="name--1">Player 2</h2>
-                <p className="score" id="score--1">{currentScore[1]}</p>
+                <p className="score" id="score--1">{totalScore[1]}</p>
                 <div className="current">
                     <p className="current-label">Current</p>
-                    <p className="current-score" id="current--1">{activePlayer === 1 ? currentDice : 0}</p>
+                    <p className="current-score" id="current--1">{activePlayer === 1 ? currentScore[1] : 0}</p>
                 </div>
             </div>
 
             {diceStart && (
-          <Image
-            src={
-              currentDice === 1
-                ? diceOne
-                : currentDice === 2
-                ? diceTwo
-                : currentDice === 3
-                ? diceThree
-                : currentDice === 4
-                ? diceFour
-                : currentDice === 5
-                ? diceFive
-                : diceSix
-            }
-            className="dice"
-            alt="dice"
-          />
-        )}
+                <Image
+                    src={diceImages[currentDice - 1]}
+                    className="dice"
+                    alt="dice"
+                />
+            )};
             <button className="btn btn--new" onClick={newGame}>New Game</button>
             <button className="btn btn--roll" onClick={roll}>Roll Dice</button>
             <button className="btn btn--hold" onClick={hold}>Hold</button>
