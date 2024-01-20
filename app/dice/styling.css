@@ -73,7 +73,7 @@ body {
 
 .current {
     background-color: #176B87;
-    opacity: 0.8;
+    opacity: 0.5;
     border-radius: 9px;
     color: #ffffff;
     width: 50%;
@@ -142,13 +142,23 @@ body {
 
 /* onchange */
 .player-winner {
-    background-color: #2D9596;
-    color: #A8DF8E;
+    background-color: #092635;
+    color: #9BB8CD;
+}
+
+.player-winner .current {
+    opacity: 0;
 }
 
 /* onchange */
 .player-winnder .name {
     font-weight: 700;
+}
+
+.winner {
+    font-size: 7rem;
+    font-weight: 300;
+    margin-bottom: auto;
 }
 
 /* onchange */

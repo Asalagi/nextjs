@@ -70,13 +70,13 @@ function DiceGame() {
         
         setCurrentDice(currentDice);
         
-        if (newTotalScores[activePlayer] >= 20){
+        if (newTotalScores[activePlayer] >= 100){
             if (activePlayer === 0) {
-                setWinnerPlayer0(true)
+                setWinnerPlayer0(true);
             } else {
-                setWinnerPlayer1(true)
+                setWinnerPlayer1(true);
             }
-            return;
+            return setDiceStart(false);
         }
         switchPlayer();
       };
@@ -85,19 +85,21 @@ function DiceGame() {
         <div>
           <div className="main">
             <div className={`player ${activePlayer ? '' : 'player-active'} ${winnerPlayer0 ? 'player-winner' : ''}`}>
-                <h2 className="name" id="name--0">Player 1</h2>
-                <p className="score" id="score--0">{totalScore[0]}</p>
+            <h2 className="name">Player 1</h2>
+                    {winnerPlayer0 ? (<p className="winner">WINNER!</p>) : 
+                    (<p className="score">{totalScore[0]}</p>)}
                 <div className="current">
                     <p className="current-label">Current</p>
-                    <p className="current-score" id="current--0">{activePlayer === 0 ? currentScore[0] : 0}</p>
+                    <p className="current-score">{activePlayer === 0 ? currentScore[0] : 0}</p>
                 </div>
             </div>
             <div className={`player ${activePlayer ? 'player-active' : ''} ${winnerPlayer1 ? 'player-winner' : ''}`}>
-                <h2 className="name" id="name--1">Player 2</h2>
-                <p className="score" id="score--1">{totalScore[1]}</p>
+                <h2 className="name">Player 2</h2>
+                    {winnerPlayer1 ? (<p className="winner">WINNER!</p>) : 
+                    (<p className="score">{totalScore[1]}</p>)}
                 <div className="current">
                     <p className="current-label">Current</p>
-                    <p className="current-score" id="current--1">{activePlayer === 1 ? currentScore[1] : 0}</p>
+                    <p className="current-score">{activePlayer === 1 ? currentScore[1] : 0}</p>
                 </div>
             </div>
 
@@ -107,10 +109,10 @@ function DiceGame() {
                     className="dice"
                     alt="dice"
                 />
-            )};
+            )}
             <button className="btn btn--new" onClick={newGame}>New Game</button>
-            <button className="btn btn--roll" onClick={roll}>Roll Dice</button>
-            <button className="btn btn--hold" onClick={hold}>Hold</button>
+            <button className="btn btn--roll" onClick={roll} disabled={winnerPlayer0 || winnerPlayer1}>Roll Dice</button>
+            <button className="btn btn--hold" onClick={hold} disabled={winnerPlayer0 || winnerPlayer1}>Hold</button>
            </div>
         </div>
     );
