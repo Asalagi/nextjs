@@ -14,6 +14,7 @@ function DiceGame() {
     const [currentDice, setCurrentDice] = useState(0);
     const [diceStart, setDiceStart] = useState(false);
     const [currentScore, setCurrentScore] = useState([0, 0]);
+    const [totalScore, setTotalScore] = useState([0, 0]);
     const [activePlayer, setActivePlayer] = useState(0);
   
 
@@ -29,14 +30,13 @@ function DiceGame() {
   
       if (diceValue !== 1) {
         setCurrentScore((prevScores) => {
-          const newScores = [...prevScores];
-          newScores[activePlayer] += diceValue;
-          return newScores;
+            const newScores = [...prevScores];
+            newScores[activePlayer] += diceValue;
+            return newScores;
         });
-
-      } else {
-        switchPlayer();
-      }
+        } else {
+            switchPlayer();
+        }
     };
 
     const newGame = () => {
@@ -47,24 +47,23 @@ function DiceGame() {
     };
 
     const hold = () => {
-        if (currentDice !== 1) {
-          const newScores = [...currentScore];
-          newScores[activePlayer] += currentDice;
-          setCurrentScore(newScores);
-      
-          switchPlayer();
-        }
-      };
+        const newCurrentScores = [...currentScore];
+        newCurrentScores[activePlayer] += totalScore[activePlayer];
+        setCurrentScore(newCurrentScores);
+    
+        setCurrentDice(0);
+        switchPlayer();
+    };
 
     return (
         <div>
           <div className="main">
             <div className={`player ${activePlayer ? '' : 'player-active'}`}>
                 <h2 className="name" id="name--0">Player 1</h2>
-                <p className="score" id="score--0">{currentScore[0]}</p>
+                <p className="score" id="score--0">{totalScore[0]}</p>
                 <div className="current">
                     <p className="current-label">Current</p>
-                    <p className="current-score" id="current--0">{activePlayer === 0 ? currentDice : 0}</p>
+                    <p className="current-score" id="current--0">{activePlayer === 0 ? currentScore[0] : 0}</p>
                 </div>
             </div>
             <div className={`player ${activePlayer ? 'player-active' : ''}`}>
