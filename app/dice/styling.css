@@ -141,13 +141,13 @@ body {
 }
 
 /* onchange */
-.player--winner {
+.player-winner {
     background-color: #2D9596;
     color: #A8DF8E;
 }
 
 /* onchange */
-.player--winnder .name {
+.player-winnder .name {
     font-weight: 700;
 }
 

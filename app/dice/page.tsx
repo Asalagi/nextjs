@@ -13,6 +13,8 @@ import './styling.css';
 function DiceGame() {
     const [currentDice, setCurrentDice] = useState(0);
     const [diceStart, setDiceStart] = useState(false);
+    const [winnerPlayer0, setWinnerPlayer0] = useState(false);
+    const [winnerPlayer1, setWinnerPlayer1] = useState(false);
     const [currentScore, setCurrentScore] = useState([0, 0]);
     const [totalScore, setTotalScore] = useState([0, 0]);
     const [activePlayer, setActivePlayer] = useState(0);
@@ -21,7 +23,6 @@ function DiceGame() {
   
 
     const switchPlayer = () => {
-        // setCurrentDice(currentDice);
         setActivePlayer(activePlayer === 0 ? 1 : 0);
     };
 
@@ -48,6 +49,8 @@ function DiceGame() {
 
     const newGame = () => {
         setDiceStart(false);
+        setWinnerPlayer0(false);
+        setWinnerPlayer1(false);
         setCurrentDice(0);
         setCurrentScore([0, 0]);
         setTotalScore([0, 0]);
@@ -64,15 +67,24 @@ function DiceGame() {
           newScores[activePlayer] = 0;
           return newScores;
         });
-      
+        
         setCurrentDice(currentDice);
+        
+        if (newTotalScores[activePlayer] >= 20){
+            if (activePlayer === 0) {
+                setWinnerPlayer0(true)
+            } else {
+                setWinnerPlayer1(true)
+            }
+            return;
+        }
         switchPlayer();
       };
 
     return (
         <div>
           <div className="main">
-            <div className={`player ${activePlayer ? '' : 'player-active'}`}>
+            <div className={`player ${activePlayer ? '' : 'player-active'} ${winnerPlayer0 ? 'player-winner' : ''}`}>
                 <h2 className="name" id="name--0">Player 1</h2>
                 <p className="score" id="score--0">{totalScore[0]}</p>
                 <div className="current">
@@ -80,7 +92,7 @@ function DiceGame() {
                     <p className="current-score" id="current--0">{activePlayer === 0 ? currentScore[0] : 0}</p>
                 </div>
             </div>
-            <div className={`player ${activePlayer ? 'player-active' : ''}`}>
+            <div className={`player ${activePlayer ? 'player-active' : ''} ${winnerPlayer1 ? 'player-winner' : ''}`}>
                 <h2 className="name" id="name--1">Player 2</h2>
                 <p className="score" id="score--1">{totalScore[1]}</p>
                 <div className="current">
