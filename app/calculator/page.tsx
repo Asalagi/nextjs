@@ -6,7 +6,7 @@ import './style.css';
 function Calculator () {
   const [input, setInput] = useState('');
 
-  const handleButtonClick = (value) => {
+  const handleButtonClick = (value: string) => {
     if (value === '/') {
       setInput((prevInput) => prevInput + '÷');
     } else if (value === '*') {
