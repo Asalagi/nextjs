@@ -32,6 +32,11 @@ function Blog () {
              <div className="card-title">
                 <p className="res-title">Projects</p>
               </div>
+              <h2>{"Dice Game Project"}</h2>
+              <p>{"Check it out"} <Link href="../dice" target="_blank" className="link">Here</Link><br/>
+              {"This was a fun and challenging porject. I first started this project with a JavaScript web course. It was initially built with using JavaScript and HTML with traditional DOM manipulation. I took it and rebuilt it with React to make it a fun and interactive game up on the web for all to enjoy!"}</p>
+              <p>{"Thank you Jonas Schmedtmann for showing this cool and fun project in your JavaScript Zero to Expert Course."}</p>
+              <hr/>
               <h2>{"Adventurer Project"}</h2>
               <p>{"Check it out"} <Link href="../adventure" target="_blank" className="link">Here</Link><br/>
               {"This is a fun adventure game that gives several randomized scenerios. I had a lot of fun building this and hope you have as much fun playing it as I had building it. Happy hiking!"}</p>
