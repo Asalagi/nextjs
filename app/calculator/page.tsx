@@ -22,8 +22,12 @@ function Calculator () {
   
   const handleCalculate = () => {
     try {
-      const result = Function('return ' + input.replace(/÷/g, '/'))();
+      const cleanedInput = input.replace(/÷/g, '/').replace(/×/g, '*');
+      
+      const result = Function('return ' + cleanedInput)();
+    
       setInput(result.toString().replace(/\//g, '÷'));
+      setInput(result.toString().replace(/\*/g, '×'));
     } catch (error) {
       setInput('Error');
     }
