@@ -15,6 +15,7 @@ function Castle() {
     const [mpWalkOne, setMpWalkOne] = useState(false);
     const [takeHeal, setTakeHeal] = useState(false);
     const [healPotiion, setHealPotion] = useState(false);
+    const [takeBounty, setTakeBounty] = useState(false);
 
  
     const hitPoints = Math.trunc(Math.random() * 10) + 1;
@@ -81,6 +82,10 @@ function Castle() {
       }
     };
 
+    const bounty = () => {
+      setTakeBounty(true);
+    }
+
       const startGame = () => {
         setDisplay('Let the game begin. Choose your path.')
         setStart(false);
@@ -131,6 +136,7 @@ function Castle() {
                         <div className="life-tick" style={{ width: `${lifeTick}%` }}></div>
                     </div> 
                     <button className={`btn-two ${healPotiion ? '' : 'hidden'}`} onClick={takePotion}>🧪</button>
+                    <button className={`btn-two ${takeBounty ? '' : 'hidden'}`} onClick={bounty}>💎</button>
                 </div>
                 <div className="display">{display}</div>
                 <div className="inner-display">{innerDisplay}</div>
@@ -144,7 +150,7 @@ function Castle() {
                     <button className={`btn ${mpCabin ? '' : 'hidden'}`} onClick={cabin}>Stop at the Cabin</button>
                     <button className={`btn ${mpWalkOne ? '' : 'hidden'}`}>Walk to the Forest</button>
                     <button className={`btn ${takeHeal ? '' : 'hidden'}`} onClick={potion}>Take Healing Potion</button>
-                    <button className="btn hidden"></button>
+                    <button className={`btn ${takeBounty ? '' : 'hidden'}`} onClick={bounty}>Take Lost Diamond!</button>
                     <button className="btn hidden"></button>
                     <button className="btn hidden"></button>
                     <button className="btn hidden">Go Seaward</button>
