@@ -1,7 +1,7 @@
 body {
     padding: 0;
     margin: 0;
-    background: linear-gradient(to right, #3887BE, #5D3587);
+    background-color: whitesmoke;
     color: white;
 }
 
@@ -50,7 +50,7 @@ button:hover {
     align-items: flex-end;
     justify-content: space-around;
     flex-direction: column;
-    padding: 10px;
+    padding: 2%;
     word-wrap: break-word;
     word-break: break-all;
 }
@@ -65,3 +65,18 @@ button:hover {
     font-size: 2.5rem;
 }
 
+@media only screen and (max-width: 600px) {
+    .cal-grid-container {
+        align-content: unset;
+        grid-template-columns: repeat(4, 80px);
+        grid-template-rows: minmax(80px, 80px) repeat(5, 80px);
+    }
+
+    button {
+        font-size: 1.5rem;
+    }
+
+    .output {
+        font-size: 2rem;
+    }
+}
