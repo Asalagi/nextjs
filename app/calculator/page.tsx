@@ -4,37 +4,23 @@ import './style.css';
 
 function Calculator() {
   const [input, setInput] = useState('');
-  const [hasCalculated, setHasCalculated] = useState(false);
 
-  const handleButtonClick = (value) => {
-    if (value === '/') {
-      setInput((prevInput) => prevInput + '÷');
-    } else if (value === '*') {
-      setInput((prevInput) => prevInput + '×');
-    } else if (value === '=') {
-      calculateResult();
+  const handleButtonClick = (value: string) => {
+    if (value === 'back'){
+      setInput((prevInput) => prevInput.slice(0, -1));
     } else {
-      setInput((prevInput) => {
-        if (hasCalculated) {
-          setHasCalculated(false);
-          return value;
-        }
-        return prevInput + value;
-      });
+    setInput((prevInput) => prevInput + value);
     }
   };
 
   const handleClear = () => {
     setInput('');
-    setHasCalculated(false);
   };
 
-  const calculateResult = () => {
+  const handleCalculate = () => {
     try {
-      const cleanedInput = input.replace(/÷/g, '/').replace(/×/g, '*');
-      const result = Function('return ' + cleanedInput)();
-      setInput(result.toString().replace(/\//g, '÷').replace(/\*/g, '×'));
-      setHasCalculated(true);
+      const result = Function(`'use strict'; return (${input})`)();
+      setInput(result.toString());
     } catch (error) {
       setInput('Error');
     }
@@ -44,7 +30,8 @@ function Calculator() {
     <div>
       <div className="cal-grid-container">
         <div className="output">{input}</div>
-        <button className="span-three top" onClick={handleClear}>Clear All</button>
+        <button className="span-two top" onClick={handleClear}>Clear</button>
+        <button className="top" onClick={() => handleButtonClick('back')}>←</button>
         <button className="orange" onClick={() => handleButtonClick('/')}>÷</button>
 
         <button onClick={() => handleButtonClick('1')}>1</button>
@@ -64,7 +51,7 @@ function Calculator() {
 
         <button className="span-two" onClick={() => handleButtonClick('0')}>0</button>
         <button onClick={() => handleButtonClick('.')}>.</button>
-        <button className="orange" onClick={calculateResult}>=</button>
+        <button className="orange" onClick={handleCalculate}>=</button>
       </div>
     </div>
   );
