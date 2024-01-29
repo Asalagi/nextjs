@@ -58,9 +58,9 @@ function HorsePage() {
     }, []);
 
     return (
-        <div>
+        <div className="main-container">
             <h2>Name</h2>
-            <hr/>
+            <hr className="line"/>
             <p>ID# {id}<br/>
             Owned by<br/>
             Bred by </p>
