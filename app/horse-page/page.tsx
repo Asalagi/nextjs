@@ -1,5 +1,7 @@
 'use client';
 // import { useState, useEffect } from 'react';
+import Image from 'next/image';
+import horsePic from './Untitled.jpg';
 import './styling.css';
 
 interface Horse {
@@ -28,11 +30,11 @@ interface Horse {
     };
 }
 
-const horseId: string = "81";
+const horseId: string = "181";
 
 function HorsePage() {
     const horseData: Horse = {
-        id: horseId.padStart(10, "0").slice(0,1),
+        id: horseId.padStart(8, "0"),
         name: "Frog",
         breed: "Paint Horse",
         age: 25,
@@ -58,18 +60,22 @@ function HorsePage() {
 };
 
 const conformationTotal = Object.values(horseData.conformation);
-const conformationAverage = conformationTotal.reduce((sum, value) => sum + value, 0)
+const conformationAverage = conformationTotal.reduce((sum, value) => sum + value, 0) / conformationTotal.length;
 
     return (
         <div className="main-container">
-            <h2>Name</h2>
-            <hr className="line"/>
-            <p>ID#<br/>
-            Owned by<br/>
-            Bred by </p>
-                <div>
-                    <p> Conformation: </p>
-                </div>
+                <h2>{horseData.name}</h2>
+                <div><hr className="line"/></div>
+                <p>ID# {horseData.id}<br/></p>
+          <div className="horse-data-container">
+            <div className="left-container">Breed: {horseData.breed}</div>
+            <div className="right-container">
+                <Image src={horsePic} width={600} height={500} className="horse" alt="horse"/>
+            </div>
+          </div>
+         <div>
+            <p> Conformation: </p>
+         </div>
         </div>
     );
 }

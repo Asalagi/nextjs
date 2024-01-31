@@ -27,6 +27,25 @@ body {
     padding: 5px;
 }
 
+.horse-data-container {
+    border: 1px solid red;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+
+}
+
+.left-container {
+    width: 200px;
+    border: 1px solid black;
+}
+
+.right-container {
+    border: 1px solid black;
+    width: 600px;
+}
+
 .line {
-    color: #E8D8C4;
+    font-size: .8rem;
+    border: 1px solid #6D2932;
 }
