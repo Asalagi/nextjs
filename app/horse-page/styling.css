@@ -70,11 +70,38 @@ button {
     display: flex;
     border: 1px solid #000000;
     border-radius: 3px;
-    background-color: #24b123;
     margin: 2px;
     font-size: 10px;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: flex-start;
     height: 15px;
     width: 80%;
+}
+
+.bar-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.hunger-bar {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    background-color: #24b123;
+    height: 15px;
+    border: 0px solid red;
+    position: relative;
+}
+
+.hunger-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #000000;
+    font-weight: 500;
+    overflow: hidden;
+    white-space: nowrap;
 }

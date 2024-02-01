@@ -1,5 +1,5 @@
 'use client';
-// import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import horsePic from './Untitled.jpg';
 import './styling.css';
@@ -63,6 +63,19 @@ function HorsePage() {
     },
 };
 
+const [hunger, setHunger] = useState(100);
+
+useEffect(() => {
+    const decreaseHunger = () => {
+        setHunger(prevHunger => Math.max(prevHunger - 1, 0));
+    };
+    const intervalId = setInterval(decreaseHunger, 86400000);
+    return () => clearInterval(intervalId);
+}, []);
+
+const hungerWidth = `${hunger}%`;
+console.log(hungerWidth);
+
 const conformationTotal = Object.values(horseData.conformation);
 const conformationAverage = conformationTotal.reduce((sum, value) => sum + value, 0) / conformationTotal.length;
 
@@ -77,13 +90,23 @@ const conformationAverage = conformationTotal.reduce((sum, value) => sum + value
                 <button>Water</button>
                 <button>Muck</button>
                 <button>Groom</button><br/>
-                <div className="bar">Hunger</div>
+             <div className="bar-box">
+                <div className="bar">
+                 <div style={{ width: '100%', position: 'relative' }}>
+                    <div className="hunger-bar" style={{ width: hungerWidth, position: 'relative' }}></div>
+                    <div className="hunger-text">
+                        Hunger {hungerWidth}
+                    </div>
+                 </div>
+                </div>
                 <div className="bar">Thirst</div>
                 <div className="bar">Happiness</div>
                 <div className="bar">Cleanliness</div>
                 <div className="bar">Injury</div>
-                <button>Vet</button><br/>
-                <button>Farrier</button><br/>
+             </div>
+                <button>Vet</button>
+                <button>Farrier</button>
+                <button>Train</button>
                 <p className="reg-text">
                 <span className="bold">Breed:</span> {horseData.breed}<br/>
                 <span className="bold">Age:</span> {horseData.age}<br/>
