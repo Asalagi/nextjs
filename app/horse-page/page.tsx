@@ -9,8 +9,10 @@ interface Horse {
     name: string;
     breed: string;
     age: number;
-    color: string;
+    height: string;
     sex: string;
+    color: string;
+    pattern: string
     stats: {
         strength: number;
         speed: number;
@@ -38,8 +40,10 @@ function HorsePage() {
         name: "Frog",
         breed: "Paint Horse",
         age: 25,
-        color: "Bay Tobiano",
-        sex: "elding",
+        height: "15.2 hands",
+        sex: "Gelding",
+        color: "Bay",
+        pattern: "Tobiano",
         stats: {
             strength: 0,
             speed: 0,
@@ -68,7 +72,26 @@ const conformationAverage = conformationTotal.reduce((sum, value) => sum + value
                 <div><hr className="line"/></div>
                 <p>ID# {horseData.id}<br/></p>
           <div className="horse-data-container">
-            <div className="left-container">Breed: {horseData.breed}</div>
+            <div className="left-container">
+                <button>Feed</button>
+                <button>Water</button>
+                <button>Muck</button>
+                <button>Groom</button><br/>
+                <div className="bar">Hunger</div>
+                <div className="bar">Thirst</div>
+                <div className="bar">Happiness</div>
+                <div className="bar">Cleanliness</div>
+                <div className="bar">Injury</div>
+                <button>Vet</button><br/>
+                <button>Farrier</button><br/>
+                <p className="reg-text">
+                <span className="bold">Breed:</span> {horseData.breed}<br/>
+                <span className="bold">Age:</span> {horseData.age}<br/>
+                <span className="bold">Height:</span> {horseData.height}<br/>
+                <span className="bold">Sex:</span> {horseData.sex}<br/>
+                <span className="bold">Color:</span> {horseData.color}<br/>
+                <span className="bold">Pattern:</span> {horseData.pattern}<br/></p>
+            </div>
             <div className="right-container">
                 <Image src={horsePic} width={600} height={500} className="horse" alt="horse"/>
             </div>

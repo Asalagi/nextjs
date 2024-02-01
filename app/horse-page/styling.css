@@ -49,3 +49,32 @@ body {
     font-size: .8rem;
     border: 1px solid #6D2932;
 }
+
+button {
+    width: 50px;
+}
+
+.reg-text {
+    font-size: 12px;
+}
+
+.small-text {
+    font-size: 11px;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+.bar {
+    display: flex;
+    border: 1px solid #000000;
+    border-radius: 3px;
+    background-color: #24b123;
+    margin: 2px;
+    font-size: 10px;
+    justify-content: center;
+    align-items: center;
+    height: 15px;
+    width: 80%;
+}
