@@ -52,14 +52,14 @@ function HorsePage() {
             intelligence: 0,
         },
         conformation: {
-            head: 0,
-            neck: 0,
-            withers:  0,
-            back: 0,
-            shoulders: 0,
-            legs: 0,
-            knees: 0,
-            hooves: 0, 
+            head: 38,
+            neck: 43,
+            withers:  24,
+            back: 29,
+            shoulders: 30,
+            legs: 41,
+            knees: 59,
+            hooves: 60, 
     },
 };
 
@@ -69,7 +69,7 @@ useEffect(() => {
     const decreaseHunger = () => {
         setHunger(prevHunger => Math.max(prevHunger - 1, 0));
     };
-    const intervalId = setInterval(decreaseHunger, 86400000);
+    const intervalId = setInterval(decreaseHunger, 864000);
     return () => clearInterval(intervalId);
 }, []);
 
@@ -77,7 +77,33 @@ const hungerWidth = `${hunger}%`;
 console.log(hungerWidth);
 
 const conformationTotal = Object.values(horseData.conformation);
-const conformationAverage = conformationTotal.reduce((sum, value) => sum + value, 0) / conformationTotal.length;
+const conformationAverage =Math.round(conformationTotal.reduce((sum, value) => sum + value, 0) / conformationTotal.length);
+
+const getConformation = (conformation: number) => {
+    if (conformation >= 0 && conformation <= 30) {
+        return 'Awful';
+    } else if (conformation >= 31 && conformation <= 49) {
+        return 'Poor';
+    } else if (conformation >= 50 && conformation <= 85) {
+        return 'Good';
+    } else if (conformation >= 86 && conformation <= 95) {
+        return 'Excellent';
+    } else if (conformation >= 96) {
+        return 'Perfect';
+    } else {
+        return 'Invalid Conformation';
+    }
+};
+
+const conformationScoreHead = getConformation(horseData.conformation.head);
+const conformationScoreNeck = getConformation(horseData.conformation.neck);
+const conformationScoreWithers = getConformation(horseData.conformation.withers);
+const conformationScoreBack = getConformation(horseData.conformation.back);
+const conformationScoreShoulders = getConformation(horseData.conformation.shoulders);
+const conformationScoreLegs = getConformation(horseData.conformation.legs);
+const conformationScoreKnees = getConformation(horseData.conformation.knees);
+const conformationScoreHooves = getConformation(horseData.conformation.hooves);
+console.log('Conformation Category:', conformationScoreHead);
 
     return (
         <div className="main-container">
@@ -120,7 +146,15 @@ const conformationAverage = conformationTotal.reduce((sum, value) => sum + value
             </div>
           </div>
          <div>
-            <p> Conformation: </p>
+            <p> Conformation Average: {conformationAverage}</p>
+            Head: {horseData.conformation.head} {conformationScoreHead}<br/>
+            Neck: {horseData.conformation.neck} {conformationScoreNeck}<br/>
+            Withers: {horseData.conformation.withers} {conformationScoreWithers}<br/>
+            Back: {horseData.conformation.back} {conformationScoreBack}<br/>
+            Shoulders: {horseData.conformation.shoulders} {conformationScoreShoulders}<br/>
+            Legs: {horseData.conformation.legs} {conformationScoreLegs}<br/>
+            Knees: {horseData.conformation.knees} {conformationScoreKnees}<br/>
+            Hooves: {horseData.conformation.hooves} {conformationScoreHooves}
          </div>
         </div>
     );
