@@ -106,9 +106,8 @@ const conformationScoreHooves = getConformation(horseData.conformation.hooves);
 
     return (
         <div className="main-container">
-                <h2>{horseData.name}</h2>
-                <div><hr className="line"/></div>
-                <p>ID# {horseData.id}<br/></p>
+                <h2 className="center">{horseData.name}</h2>
+                <p className="center">ID# {horseData.id}<br/></p>
           <div className="horse-data-container">
             <div className="left-container">
                 <button>Feed</button>
@@ -133,24 +132,57 @@ const conformationScoreHooves = getConformation(horseData.conformation.hooves);
                 <button>Farrier</button>
                 <button>Train</button>
               <div className="info-box">
-                <p className="reg-text">
-                <span className="bold">Breed:</span> {horseData.breed}<br/>
-                <span className="bold">Age:</span> {horseData.age}<br/>
-                <span className="bold">Height:</span> {horseData.height}<br/>
-                <span className="bold">Sex:</span> {horseData.sex}<br/>
-                <span className="bold">Color:</span> {horseData.color}<br/>
-                <span className="bold">Pattern:</span> {horseData.pattern}<br/></p>
+                <div className="title-container bold reg-text">
+                    Breed<br/>
+                    Age<br/>
+                    Height<br/>
+                    Sex<br/>
+                    Color<br/>
+                    Pattern<br/>
+                </div>
+                <div className="info-container reg-text">
+                    {horseData.breed}<br/>
+                    {horseData.age}<br/>
+                    {horseData.height}<br/>
+                    {horseData.sex}<br/>
+                    {horseData.color}<br/>
+                    {horseData.pattern}<br/>
+                </div>
               </div>  
               <div className="confo-box">
                 <div className="confo-head bold reg-text"> Conformation Average: {conformationAverage}</div>
-                <p className="reg-text"><span className="bold">Head:</span> {horseData.conformation.head} {conformationScoreHead}<br/>
-                <span className="bold">Neck:</span> {horseData.conformation.neck} {conformationScoreNeck}<br/>
-                <span className="bold">Withers:</span> {horseData.conformation.withers} {conformationScoreWithers}<br/>
-                <span className="bold">Back:</span> {horseData.conformation.back} {conformationScoreBack}<br/>
-                <span className="bold">Shoulders:</span> {horseData.conformation.shoulders} {conformationScoreShoulders}<br/>
-                <span className="bold">Legs:</span> {horseData.conformation.legs} {conformationScoreLegs}<br/>
-                <span className="bold">Knees:</span> {horseData.conformation.knees} {conformationScoreKnees}<br/>
-                <span className="bold">Hooves:</span> {horseData.conformation.hooves} {conformationScoreHooves}</p>
+                <div className="confo-container">
+                <div className="title-container bold reg-text">
+                    Head<br/>
+                    Neck<br/>
+                    Withers<br/>
+                    Back<br/>
+                    Shoulders<br/>
+                    Legs<br/>
+                    Knees<br/>
+                    Hooves
+                </div>
+                <div className="info-container reg-text">
+                    {horseData.conformation.head}<br/>
+                    {horseData.conformation.neck}<br/>
+                    {horseData.conformation.withers}<br/>
+                    {horseData.conformation.shoulders}<br/>
+                    {horseData.conformation.back}<br/>
+                    {horseData.conformation.legs}<br/>
+                    {horseData.conformation.knees}<br/>
+                    {horseData.conformation.hooves}
+                </div>
+                <div className="confo-score reg-text">
+                    {conformationScoreHead}<br/>
+                    {conformationScoreNeck}<br/>
+                    {conformationScoreWithers}<br/>
+                    {conformationScoreShoulders}<br/>
+                    {conformationScoreBack}<br/>
+                    {conformationScoreLegs}<br/>
+                    {conformationScoreKnees}<br/>
+                    {conformationScoreHooves}
+                </div>
+            </div>
             </div>
             </div>
             <div className="right-container">

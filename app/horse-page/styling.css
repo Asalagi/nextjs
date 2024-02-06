@@ -28,7 +28,7 @@ body {
 }
 
 .horse-data-container {
-    border: 1px solid red;
+    border: 0px solid red;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
@@ -37,21 +37,31 @@ body {
 
 .left-container {
     width: 200px;
+    height: 500px;
+
     border: 1px solid black;
 }
 
 .right-container {
-    border: 1px solid black;
     width: 600px;
+    height: 500px;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
 }
 
 .line {
     font-size: .8rem;
-    border: 1px solid #6D2932;
+    border: 0px solid #6D2932;
 }
 
 button {
+    font-size: 12px;
     width: 50px;
+}
+
+.center {
+    text-align: center;
 }
 
 .reg-text {
@@ -79,7 +89,7 @@ button {
 }
 
 .bar-box {
-    border: 1px solid black;
+    border: 0px solid black;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -108,25 +118,47 @@ button {
 }
 
 .confo-box {
-    border: 1px solid black;
+    border: 0px solid black;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
+    justify-content: space-between;
+
 }
 .confo-head {
     background-color: tan;
-    border-bottom: 1px solid black;
+    border-bottom: 0px solid black;
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
 }
-.info-box {
-    border: 1px solid black;
+.confo-container {
+    border: 0px solid black;
+    width: 100%;
     display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
+    flex-direction: row;
     align-items: center;
+}
+.info-box {
+    display: flex;
+    flex-direction: row;
+    border: 0px solid black;
+    justify-content: flex-start;
+    align-items: center;
+}
+.title-container {
+    width: 40%;
+    border: 0px solid black;
+    padding: 1%;
+}
+.info-container {
+    border: 0px solid black;
+    padding: 1%;
+}
+.confo-score {
+    font-style: italic;
+    color: grey;
+    border: 0px solid black;
+    padding: 1%;
 }
