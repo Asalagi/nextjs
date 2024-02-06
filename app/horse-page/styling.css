@@ -79,6 +79,7 @@ button {
 }
 
 .bar-box {
+    border: 1px solid black;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -104,4 +105,28 @@ button {
     font-weight: 500;
     overflow: hidden;
     white-space: nowrap;
+}
+
+.confo-box {
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+.confo-head {
+    background-color: tan;
+    border-bottom: 1px solid black;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+.info-box {
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
 }

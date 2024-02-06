@@ -103,7 +103,6 @@ const conformationScoreShoulders = getConformation(horseData.conformation.should
 const conformationScoreLegs = getConformation(horseData.conformation.legs);
 const conformationScoreKnees = getConformation(horseData.conformation.knees);
 const conformationScoreHooves = getConformation(horseData.conformation.hooves);
-console.log('Conformation Category:', conformationScoreHead);
 
     return (
         <div className="main-container">
@@ -133,6 +132,7 @@ console.log('Conformation Category:', conformationScoreHead);
                 <button>Vet</button>
                 <button>Farrier</button>
                 <button>Train</button>
+              <div className="info-box">
                 <p className="reg-text">
                 <span className="bold">Breed:</span> {horseData.breed}<br/>
                 <span className="bold">Age:</span> {horseData.age}<br/>
@@ -140,22 +140,23 @@ console.log('Conformation Category:', conformationScoreHead);
                 <span className="bold">Sex:</span> {horseData.sex}<br/>
                 <span className="bold">Color:</span> {horseData.color}<br/>
                 <span className="bold">Pattern:</span> {horseData.pattern}<br/></p>
+              </div>  
+              <div className="confo-box">
+                <div className="confo-head bold reg-text"> Conformation Average: {conformationAverage}</div>
+                <p className="reg-text"><span className="bold">Head:</span> {horseData.conformation.head} {conformationScoreHead}<br/>
+                <span className="bold">Neck:</span> {horseData.conformation.neck} {conformationScoreNeck}<br/>
+                <span className="bold">Withers:</span> {horseData.conformation.withers} {conformationScoreWithers}<br/>
+                <span className="bold">Back:</span> {horseData.conformation.back} {conformationScoreBack}<br/>
+                <span className="bold">Shoulders:</span> {horseData.conformation.shoulders} {conformationScoreShoulders}<br/>
+                <span className="bold">Legs:</span> {horseData.conformation.legs} {conformationScoreLegs}<br/>
+                <span className="bold">Knees:</span> {horseData.conformation.knees} {conformationScoreKnees}<br/>
+                <span className="bold">Hooves:</span> {horseData.conformation.hooves} {conformationScoreHooves}</p>
+            </div>
             </div>
             <div className="right-container">
                 <Image src={horsePic} width={600} height={500} className="horse" alt="horse"/>
             </div>
           </div>
-         <div>
-            <p> Conformation Average: {conformationAverage}</p>
-            Head: {horseData.conformation.head} {conformationScoreHead}<br/>
-            Neck: {horseData.conformation.neck} {conformationScoreNeck}<br/>
-            Withers: {horseData.conformation.withers} {conformationScoreWithers}<br/>
-            Back: {horseData.conformation.back} {conformationScoreBack}<br/>
-            Shoulders: {horseData.conformation.shoulders} {conformationScoreShoulders}<br/>
-            Legs: {horseData.conformation.legs} {conformationScoreLegs}<br/>
-            Knees: {horseData.conformation.knees} {conformationScoreKnees}<br/>
-            Hooves: {horseData.conformation.hooves} {conformationScoreHooves}
-         </div>
         </div>
     );
 }
