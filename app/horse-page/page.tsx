@@ -49,7 +49,7 @@ function HorsePage() {
                 return newHunger;
             });
         };
-        const intervalId = setInterval(decreaseHunger, 432000); 
+        const intervalId = setInterval(decreaseHunger, 300000); 
         return () => clearInterval(intervalId);
     }, []);
 
@@ -62,6 +62,31 @@ function HorsePage() {
 
     const conformationTotal = Object.values(horseData.conformation);
     const conformationAverage = Math.round(conformationTotal.reduce((sum, value) => sum + value, 0) / conformationTotal.length);
+
+    const getConformation = (conformation: number) => {
+        if (conformation >= 0 && conformation <= 30) {
+            return 'Awful';
+        } else if (conformation >= 31 && conformation <= 49) {
+            return 'Poor';
+        } else if (conformation >= 50 && conformation <= 85) {
+            return 'Good';
+        } else if (conformation >= 86 && conformation <= 95) {
+            return 'Excellent';
+        } else if (conformation >= 96) {
+            return 'Perfect';
+        } else {
+            return 'Invalid Conformation';
+        }
+    };
+
+    const conformationScoreHead = getConformation(horseData.conformation.head);
+    const conformationScoreNeck = getConformation(horseData.conformation.neck);
+    const conformationScoreWithers = getConformation(horseData.conformation.withers);
+    const conformationScoreBack = getConformation(horseData.conformation.back);
+    const conformationScoreShoulders = getConformation(horseData.conformation.shoulders);
+    const conformationScoreLegs = getConformation(horseData.conformation.legs);
+    const conformationScoreKnees = getConformation(horseData.conformation.knees);
+    const conformationScoreHooves = getConformation(horseData.conformation.hooves);
 
     return (
         <div className="main-container">
@@ -130,6 +155,16 @@ function HorsePage() {
                                 {horseData.conformation.legs}<br/>
                                 {horseData.conformation.knees}<br/>
                                 {horseData.conformation.hooves}
+                            </div>
+                            <div className="confo-score reg-text">
+                                {conformationScoreHead}<br/>
+                                {conformationScoreNeck}<br/>
+                                {conformationScoreWithers}<br/>
+                                {conformationScoreShoulders}<br/>
+                                {conformationScoreBack}<br/>
+                                {conformationScoreLegs}<br/>
+                                {conformationScoreKnees}<br/>
+                                {conformationScoreHooves}
                             </div>
                         </div>
                     </div>
