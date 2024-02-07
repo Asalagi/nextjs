@@ -4,9 +4,6 @@ import Image from 'next/image';
 import horsePic from './Untitled.jpg';
 import './styling.css';
 
-const HUNGER_STORAGE_KEY = 'hunger';
-
-
 function HorsePage() {
     const horseData = {
         id: "00000181",
@@ -36,29 +33,43 @@ function HorsePage() {
         },
     };
 
-    const [hunger, setHunger] = useState(() => {
-        const storedHunger = localStorage.getItem(HUNGER_STORAGE_KEY);
-        return storedHunger ? parseInt(storedHunger, 10) : 100;
-    });
+    const [hunger, setHunger] = useState(100);
+    const [thirst, setThirst] = useState(100);
     
     useEffect(() => {
         const decreaseHunger = () => {
             setHunger(prevHunger => {
                 const newHunger = Math.max(prevHunger - 1, 0);
-                localStorage.setItem(HUNGER_STORAGE_KEY, newHunger.toString());
                 return newHunger;
             });
         };
-        const intervalId = setInterval(decreaseHunger, 300000); 
+        const intervalId = setInterval(decreaseHunger, 60000); 
         return () => clearInterval(intervalId);
     }, []);
 
     const feed = () => {
         setHunger(100);
-        localStorage.setItem(HUNGER_STORAGE_KEY, '100');
     };
 
     const hungerWidth = `${hunger}%`;
+
+
+    useEffect(() => {
+        const decreaseWater = () => {
+            setThirst(prevThirst => {
+                const newThirst = Math.max(prevThirst - 1, 0);
+                return newThirst;
+            });
+        };
+        const intervalId = setInterval(decreaseWater, 60000); 
+        return () => clearInterval(intervalId);
+    }, []);
+
+    const water = () => {
+        setThirst(100);
+    }
+
+    const thirstWidth = `${thirst}%`;
 
     const conformationTotal = Object.values(horseData.conformation);
     const conformationAverage = Math.round(conformationTotal.reduce((sum, value) => sum + value, 0) / conformationTotal.length);
@@ -95,19 +106,26 @@ function HorsePage() {
             <div className="horse-data-container">
                 <div className="left-container">
                     <button onClick={feed}>Feed</button>
-                    <button>Water</button>
+                    <button onClick={water}>Water</button>
                     <button>Muck</button>
                     <button>Groom</button><br/>
                     <div className="bar-box">
                         <div className="bar">
                             <div style={{ width: '100%', position: 'relative' }}>
-                                <div className="hunger-bar" style={{ width: hungerWidth, position: 'relative' }}></div>
-                                <div className="hunger-text">
+                                <div className="full-bar" style={{ width: hungerWidth, position: 'relative' }}></div>
+                                <div className="full-bar-text">
                                     Hunger {hungerWidth}
                                 </div>
                             </div>
                         </div>
-                        <div className="bar">Thirst</div>
+                        <div className="bar">
+                            <div style={{ width: '100%', position: 'relative' }}>
+                                <div className="full-bar" style={{ width: thirstWidth, position: 'relative' }}></div>
+                                <div className="full-bar-text">
+                                    Thirst {thirstWidth}
+                                </div>
+                            </div>
+                        </div>
                         <div className="bar">Happiness</div>
                         <div className="bar">Cleanliness</div>
                         <div className="bar">Injury</div>
