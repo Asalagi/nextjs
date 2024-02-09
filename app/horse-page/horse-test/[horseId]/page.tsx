@@ -1,18 +1,11 @@
-import { promises as fs } from 'fs';
+import { getHorseById, Horse } from '@/app/data-access/horses';
 
-export default async function getHorse({ horseId }: { horseId: number }) {
-  interface Horse {
-    id: number;
-    name: string;
-    breed: string;
-  }
+export default async function getHorse({ params }: {params: {horseId: string}}) {
+  
+  const horseId = parseInt(params.horseId, 10);
 
   try {
-    const file = await fs.readFile(process.cwd() + '/public/horses.json', 'utf8');
-    const horsesData = JSON.parse(file);
-    
-    const selectedHorse = horsesData.find((horse: Horse) => horse.id === horseId);
-
+    const selectedHorse: Horse = await getHorseById(horseId);
     if (!selectedHorse) {
       return <div>Horse not found</div>;
     }
