@@ -9,9 +9,9 @@ export default async function getHorse({ horseId }: { horseId: number }) {
 
   try {
     const file = await fs.readFile(process.cwd() + '/public/horses.json', 'utf8');
-    const horses = JSON.parse(file);
+    const horsesData = JSON.parse(file);
     
-    const selectedHorse = horses.find((horse: Horse) => horse.id === horseId);
+    const selectedHorse = horsesData.find((horse: Horse) => horse.id === horseId);
 
     if (!selectedHorse) {
       return <div>Horse not found</div>;

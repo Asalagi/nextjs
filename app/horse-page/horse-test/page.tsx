@@ -1,7 +1,7 @@
 import Link from 'next/link';
-import horsesData from '../../../public/horses.json'
+import horsesData from '../../../public/horses.json';
 
-function HorseListPage() {
+export default function HorseListPage() {
     return (
         <div>
             <h1>Horse List</h1>
@@ -15,6 +15,4 @@ function HorseListPage() {
             </ul>
         </div>
     );
-}
-
-export default HorseListPage;
+};
