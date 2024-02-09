@@ -7,9 +7,9 @@ function HorseListPage() {
             <h1>Horse List</h1>
             <ul>
                 {horsesData.map((horse) => (
-                    <li key={horse.id}>
-                        <Link href={`/horse-page/horse-test/${horse.id}`}>{horse.id} </Link>
-                            {horse.name} - {horse.breed}
+                    <li key={horse.id}>{horse.id} - 
+                        <Link href={`/horse-page/horse-test/${horse.id}`}> {horse.name} </Link>
+                            - {horse.breed} - {horse.age} - {horse.sex}
                     </li>
                 ))}
             </ul>

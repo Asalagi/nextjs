@@ -1,6 +1,6 @@
 import { promises as fs } from 'fs';
 
-export default async function Page({ horseId }: { horseId: number }) {
+export default async function getHorse({ horseId }: { horseId: number }) {
   interface Horse {
     id: number;
     name: string;
