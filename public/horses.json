@@ -1,0 +1,29 @@
+[
+    {
+        "id": 1,
+        "name": "Horse1",
+        "breed": "Thoroughbred",
+        "age": 5,
+        "color": "Bay",
+        "height": "15.3 hands",
+        "sex": "Gelding"
+    },
+    {
+        "id": 2,
+        "name": "Horse2",
+        "breed": "Quarter Horse",
+        "age": 8,
+        "color": "Palomino",
+        "height": "16 hands",
+        "sex": "Mare"
+    },
+    {
+        "id": 3,
+        "name": "Horse3",
+        "breed": "Arabian",
+        "age": 3,
+        "color": "Grey",
+        "height": "14.2 hands",
+        "sex": "Stallion"
+    }
+]

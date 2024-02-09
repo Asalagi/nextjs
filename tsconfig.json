@@ -8,7 +8,7 @@
     "noEmit": true,
     "esModuleInterop": true,
     "module": "esnext",
-    "moduleResolution": "bundler",
+    "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
@@ -22,6 +22,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/alliesalagi/page.js", "app/alliesalagi/resume/page.js", "app/alliesalagi/projects/page.js", "app/alliesalagi/contact/page.js", "app/calendar/page.js", "app/alliesalagi/about/page.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/alliesalagi/page.js", "app/alliesalagi/resume/page.js", "app/alliesalagi/projects/page.js", "app/alliesalagi/contact/page.js", "app/calendar/page.js", "app/alliesalagi/about/page.js", ".next/types/app/horse-page/horse-test/page.tsx", ".next/types/app/horse-page/horse-test/[id]/page.tsx", "app/horse-page/horse-test/[id]/index.js", "app/horse-page/horse-test/horse/[id].js", "app/horse-page/horse-test/horse/[id].js", "app/horse-page/horse-test/page.js", "app/horse-page/horse-test/horse/[id].js", "app/horse-page/horse-test/page.js"],
   "exclude": ["node_modules"]
 }
