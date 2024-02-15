@@ -1,7 +1,7 @@
 'use client';
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
-import horsePic from './Untitled.jpg';
+import horsePic from './Untitled.png';
 import './styling.css';
 
 function HorsePage() {
@@ -36,6 +36,7 @@ function HorsePage() {
     const [hunger, setHunger] = useState(75);
     const [thirst, setThirst] = useState(75);
     const [happy, setHappy] = useState(75);
+    const [clean, setClean] = useState(75);
     
     useEffect(() => {
         const decreaseHunger = () => {
@@ -79,11 +80,12 @@ function HorsePage() {
                 return newHappy;
             });
         };
-        const intervalId = setInterval(decreaseHappy, 12000);
+        const intervalId = setInterval(decreaseHappy, 60000);
         return () => clearInterval(intervalId);
     }, []);
 
-    const happyPoints = Math. trunc(Math.random() * 5) + 1;
+    const happyPoints = Math. trunc(Math.random() * 10) + 1;
+    const cleanPoints = Math. trunc(Math.random() * 15) + 1;
 
     const makeHappy = () => {
         if (happy > 0) {
@@ -95,9 +97,32 @@ function HorsePage() {
             return newHappiness;
           });
         }
+
+        if (clean > 0) {
+            setClean((prevClean) => {
+              const newClean = prevClean + cleanPoints;
+              if (newClean >= 100) {
+                  setClean(100);
+              }
+              return newClean;
+            });
+          }
       };
 
     const happyWidth = `${happy}%`;
+
+    useEffect(() => {
+        const decreaseClean = () => {
+            setClean(prevClean => {
+                const newClean = Math.max(prevClean - 1, 0);
+                return newClean;
+            });
+        };
+        const intervalId = setInterval(decreaseClean, 60000);
+        return () => clearInterval(intervalId);
+    }, []);
+
+    const cleanWidth = `${clean}%`;
 
     /* add in happiness, decrease at different rate but have things like
        turnout time, leisure ride, grooming, treating and nose boops
@@ -176,7 +201,14 @@ function HorsePage() {
                                 </div>
                             </div>
                         </div>  
-                        <div className="bar">Cleanliness</div>
+                        <div className="bar">
+                            <div style={{ width: '100%', position: 'relative' }}>
+                                <div className="full-bar" style={{ width: cleanWidth, position: 'relative' }}></div>
+                                <div className="full-bar-text">
+                                    Cleanliness {cleanWidth}
+                                </div>
+                            </div>
+                        </div>
                         <div className="bar">Injury</div>
                     </div>
                     <button>Vet</button>
