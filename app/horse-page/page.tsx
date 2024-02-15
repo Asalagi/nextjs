@@ -85,7 +85,6 @@ function HorsePage() {
     }, []);
 
     const happyPoints = Math. trunc(Math.random() * 10) + 1;
-    const cleanPoints = Math. trunc(Math.random() * 15) + 1;
 
     const makeHappy = () => {
         if (happy > 0) {
@@ -97,19 +96,10 @@ function HorsePage() {
             return newHappiness;
           });
         }
-
-        if (clean > 0) {
-            setClean((prevClean) => {
-              const newClean = prevClean + cleanPoints;
-              if (newClean >= 100) {
-                  setClean(100);
-              }
-              return newClean;
-            });
-          }
-      };
+    };
 
     const happyWidth = `${happy}%`;
+
 
     useEffect(() => {
         const decreaseClean = () => {
@@ -121,6 +111,10 @@ function HorsePage() {
         const intervalId = setInterval(decreaseClean, 60000);
         return () => clearInterval(intervalId);
     }, []);
+
+    const makeClean = () => {
+        setClean(100);
+    };
 
     const cleanWidth = `${clean}%`;
 
@@ -174,7 +168,7 @@ function HorsePage() {
                 <div className="left-container">
                     <button onClick={feed}>Feed</button>
                     <button onClick={water}>Water</button>
-                    <button>Muck</button>
+                    <button onClick={makeClean}>Muck</button>
                     <button onClick={makeHappy}>Groom</button><br/>
                     <div className="bar-box">
                         <div className="bar">

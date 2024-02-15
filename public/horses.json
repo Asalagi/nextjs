@@ -1,29 +1,32 @@
 [
     {
         "id": 1,
-        "name": "Horse1",
+        "name": "Buddy",
         "breed": "Thoroughbred",
-        "age": 5,
+        "age": 2019,
         "color": "Bay",
-        "height": "15.3 hands",
-        "sex": "Gelding"
+        "height": "15.3hh",
+        "sex": "Gelding",
+        "notes": "Here are some notes on Buddy!"
     },
     {
         "id": 2,
-        "name": "Horse2",
+        "name": "Cowgirl",
         "breed": "Quarter Horse",
-        "age": 8,
+        "age": 2016,
         "color": "Palomino",
-        "height": "16 hands",
-        "sex": "Mare"
+        "height": "16hh",
+        "sex": "Mare",
+        "notes": "Here are some notes on Cowgirl!"
     },
     {
         "id": 3,
-        "name": "Horse3",
+        "name": "Teddy",
         "breed": "Arabian",
-        "age": 3,
+        "age": 2004,
         "color": "Grey",
-        "height": "14.2 hands",
-        "sex": "Stallion"
+        "height": "14.2hh",
+        "sex": "Stallion",
+        "notes": "Here are some notes on Teddy!"
     }
 ]
