@@ -4,6 +4,11 @@ export interface Horse {
     id: number;
     name: string;
     breed: string;
+    age: number;
+    color: string;
+    sex: string;
+    height: string;
+    notes: string;
 }
 
 export async function getHorseById (id: number) : Promise<Horse> {
