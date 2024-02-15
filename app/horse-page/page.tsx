@@ -33,8 +33,9 @@ function HorsePage() {
         },
     };
 
-    const [hunger, setHunger] = useState(100);
-    const [thirst, setThirst] = useState(100);
+    const [hunger, setHunger] = useState(75);
+    const [thirst, setThirst] = useState(75);
+    const [happy, setHappy] = useState(75);
     
     useEffect(() => {
         const decreaseHunger = () => {
@@ -70,6 +71,47 @@ function HorsePage() {
     }
 
     const thirstWidth = `${thirst}%`;
+
+    useEffect(() => {
+        const decreaseHappy = () => {
+            setHappy(prevHappy => {
+                const newHappy = Math.max(prevHappy - 1, 0);
+                return newHappy;
+            });
+        };
+        const intervalId = setInterval(decreaseHappy, 12000);
+        return () => clearInterval(intervalId);
+    }, []);
+
+    const happyPoints = Math. trunc(Math.random() * 5) + 1;
+
+    const makeHappy = () => {
+        if (happy > 0) {
+          setHappy((prevHappiness) => {
+            const newHappiness = prevHappiness + happyPoints;
+            if (newHappiness >= 100) {
+                setHappy(100);
+            }
+            return newHappiness;
+          });
+        }
+      };
+
+    const happyWidth = `${happy}%`;
+
+    /* add in happiness, decrease at different rate but have things like
+       turnout time, leisure ride, grooming, treating and nose boops
+    */
+   
+   /* add in cleanliness, this will decrease as horse needs to be groomed and stall cleaned.
+      buttons like groom, bath and muck stall will be added. If not done horse will become 
+      unhappy 
+    */
+
+    /* add train button and on random this button will cause injury and decrease happiness.
+       If horse is injured training, turnout and riding button will be disabled, and things like,
+       hand walk, cold water and therapy will be added
+    */
 
     const conformationTotal = Object.values(horseData.conformation);
     const conformationAverage = Math.round(conformationTotal.reduce((sum, value) => sum + value, 0) / conformationTotal.length);
@@ -108,7 +150,7 @@ function HorsePage() {
                     <button onClick={feed}>Feed</button>
                     <button onClick={water}>Water</button>
                     <button>Muck</button>
-                    <button>Groom</button><br/>
+                    <button onClick={makeHappy}>Groom</button><br/>
                     <div className="bar-box">
                         <div className="bar">
                             <div style={{ width: '100%', position: 'relative' }}>
@@ -126,7 +168,14 @@ function HorsePage() {
                                 </div>
                             </div>
                         </div>
-                        <div className="bar">Happiness</div>
+                        <div className="bar">
+                            <div style={{ width: '100%', position: 'relative' }}>
+                                <div className="full-bar" style={{ width: happyWidth, position: 'relative' }}></div>
+                                <div className="full-bar-text">
+                                    Happiness {happyWidth}
+                                </div>
+                            </div>
+                        </div>  
                         <div className="bar">Cleanliness</div>
                         <div className="bar">Injury</div>
                     </div>
