@@ -4,6 +4,7 @@ import { getHorseById, Horse } from '@/app/data-access/horses';
 export default async function getHorse({ params }: {params: {horseId: string}}) {
   
   const horseId = parseInt(params.horseId, 10);
+  console.log(horseId, params);
 
   try {
     const selectedHorse: Horse = await getHorseById(horseId);
@@ -19,7 +20,7 @@ export default async function getHorse({ params }: {params: {horseId: string}}) 
       </div>
     );
   } catch (error) {
-    console.error('Error reading or parsing JSON file:', error);
+    console.log('Error reading or parsing JSON file:', error);
     return <div>Error loading data</div>;
   }
 }
