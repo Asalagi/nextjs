@@ -15,11 +15,11 @@ function HorsePage() {
         color: "Bay",
         pattern: "Tobiano",
         stats: {
-            strength: 0,
-            speed: 0,
-            endurance: 0,
-            agility: 0,
-            intelligence: 0,
+            strength: 9,
+            speed: 14,
+            endurance: 20,
+            agility: 11,
+            intelligence: 18,
         },
         conformation: {
             head: 38,
@@ -131,6 +131,9 @@ function HorsePage() {
        If horse is injured training, turnout and riding button will be disabled, and things like,
        hand walk, cold water and therapy will be added
     */
+
+    const trainabilityTotal = Object.values(horseData.stats);
+    const trainabilityAverage = Math.round(trainabilityTotal.reduce((sum, value) => sum + value, 0) / trainabilityTotal.length);
 
     const conformationTotal = Object.values(horseData.conformation);
     const conformationAverage = Math.round(conformationTotal.reduce((sum, value) => sum + value, 0) / conformationTotal.length);
@@ -261,6 +264,25 @@ function HorsePage() {
                             </div>
                         </div>
                     </div>
+                    <div className="confo-box">
+                        <div className="confo-head bold reg-text"> Trainbility: {trainabilityAverage}</div>
+                        <div className="confo-container">
+                            <div className="title-container bold reg-text">
+                                strength<br/>
+                                speed<br/>
+                                endurance<br/>
+                                agility<br/>
+                                intelligence<br/>
+                            </div>
+                            <div className="info-container reg-text">
+                                {horseData.stats.strength}<br/>
+                                {horseData.stats.speed}<br/>
+                                {horseData.stats.endurance}<br/>
+                                {horseData.stats.agility}<br/>
+                                {horseData.stats.intelligence}
+                            </div>
+                        </div>
+                    </div> 
                 </div>
                 <div className="right-container">
                     <Image src={horsePic} width={600} height={500} className="horse" alt="horse"/>
