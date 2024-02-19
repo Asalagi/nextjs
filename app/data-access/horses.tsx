@@ -12,7 +12,7 @@ export interface Horse {
 }
 
 export async function getHorseById (id: number) : Promise<Horse> {
-    const file = await fs.readFile(process.cwd() + '/public/horses.json', 'utf8');
+    const file = await fs.readFile(process.cwd() + '/horses.json', 'utf8');
     const horsesData = JSON.parse(file);
 
     const selectedHorse = horsesData.find((horse: Horse) => horse.id === id);
