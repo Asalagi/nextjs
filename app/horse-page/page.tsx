@@ -54,6 +54,7 @@ function HorsePage() {
     };
 
     const hungerWidth = `${hunger}%`;
+    console.log("hunger:", hungerWidth);
 
 
     useEffect(() => {
@@ -72,6 +73,7 @@ function HorsePage() {
     }
 
     const thirstWidth = `${thirst}%`;
+    console.log("thirst:", thirstWidth);
 
     useEffect(() => {
         const decreaseHappy = () => {
@@ -87,7 +89,6 @@ function HorsePage() {
     const happyPoints = Math. trunc(Math.random() * 10) + 1;
 
     const makeHappy = () => {
-        if (happy > 0) {
           setHappy((prevHappiness) => {
             const newHappiness = prevHappiness + happyPoints;
             if (newHappiness >= 100) {
@@ -95,16 +96,15 @@ function HorsePage() {
             }
             return newHappiness;
           });
-        }
     };
 
     const happyWidth = `${happy}%`;
-
+    console.log("happiness:", happyWidth);
 
     useEffect(() => {
         const decreaseClean = () => {
             setClean(prevClean => {
-                const newClean = Math.max(prevClean - 1, 0);
+                const newClean = Math.max(prevClean - 1, 1);
                 return newClean;
             });
         };
@@ -117,6 +117,7 @@ function HorsePage() {
     };
 
     const cleanWidth = `${clean}%`;
+    console.log("cleanliness:", cleanWidth);
 
     /* add in happiness, decrease at different rate but have things like
        turnout time, leisure ride, grooming, treating and nose boops
