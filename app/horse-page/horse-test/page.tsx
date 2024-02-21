@@ -2,6 +2,8 @@ import Link from 'next/link';
 import horsesData from '../../../public/horses.json';
 
 export default function HorseListPage() {
+    // add in collapsable section for horses info instead of dynamic routing maybe
+
     return (
         <div>
             <h1>Horse List</h1>

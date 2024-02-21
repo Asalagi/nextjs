@@ -104,7 +104,7 @@ function HorsePage() {
     useEffect(() => {
         const decreaseClean = () => {
             setClean(prevClean => {
-                const newClean = Math.max(prevClean - 1, 1);
+                const newClean = Math.max(prevClean - 1, 0);
                 return newClean;
             });
         };

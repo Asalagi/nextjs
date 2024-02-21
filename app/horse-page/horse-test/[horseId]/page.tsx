@@ -22,7 +22,7 @@ export default async function getHorse({ params }: {params: {horseId: string}}) 
       </div>
     );
   } catch (error) {
-    console.log('Error reading or parsing JSON file:', error);
+    console.log(error);
 
     return <div>Error loading data</div>;
   }
