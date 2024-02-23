@@ -45,7 +45,8 @@ body {
     width: 60vw;
     min-height: 100vh;
     padding: 1px;
-    margin-bottom: 0;
+    overflow-y: visible;
+    margin-bottom: 0px;
 }
 
 .post-container {
