@@ -39,14 +39,22 @@ body {
 
 .main-container {
     display: flex;
-    flex-grow: 1;
     align-items: center;
     background-color: #EEEEEE;
     width: 60vw;
     min-height: 100vh;
+    height: fit-content;
+    border: 0px solid #0F0F0F;
     padding: 1px;
-    overflow-y: visible;
-    margin-bottom: 0px;
+}
+
+.content-container {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    align-items: center;
+    border: 0px solid #0F0F0F;
+    padding-bottom: 10px;
 }
 
 .post-container {
