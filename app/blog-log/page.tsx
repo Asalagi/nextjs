@@ -29,7 +29,7 @@ export default function BlogLog () {
                 <Image src={topImage} className="flexImage" alt="top image"/>
                 <h1 className="title">Welcome to the Blog Log</h1>
                 <div className="content-container">
-                    {blogPost.map((post, index) => ( // Include the index parameter here
+                    {blogPost.map((post, index) => (
                         <div className="post-container" key={post.id}>
                             <h2 className="post-title">{post.title}</h2>
                             <p className="post-date">{post.date}</p><br/>

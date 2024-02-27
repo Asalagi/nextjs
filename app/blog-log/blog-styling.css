@@ -45,10 +45,12 @@ body {
     min-height: 100vh;
     height: fit-content;
     border: 0px solid #0F0F0F;
-    padding: 1px;
+    padding-left: 1px;
+    padding-right: 1px;
 }
 
 .content-container {
+    white-space: pre-wrap;
     display: flex;
     flex-direction: column;
     width: 90%;
