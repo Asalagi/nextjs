@@ -34,6 +34,7 @@ body {
     font-weight: 600;
 }
 .see-more:hover {
+    cursor: pointer;
     background-color: #5C8374;
 }
 
