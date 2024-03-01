@@ -9,7 +9,10 @@ body {
     background-color: #5C8374;
 }
 
+/* look at implementing :root font sizes and clamp (calc()) method for responsive text */
+
 .title {
+    font-size: 3rem;
     color: #0F0F0F;
 }
 
@@ -46,8 +49,7 @@ body {
     min-height: 100vh;
     height: fit-content;
     border: 0px solid #0F0F0F;
-    padding-left: 1px;
-    padding-right: 1px;
+
 }
 
 .content-container {
@@ -74,6 +76,6 @@ body {
 .flexImage {
     margin: 0;
     flex: 1; 
-    max-width: 1077px; 
+    max-width: 100%; 
     max-height: 249px; 
   }
