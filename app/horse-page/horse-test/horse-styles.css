@@ -44,16 +44,24 @@ body {
     display: none;
 }
 
+.table {
+    width: 100%;
+    border: 1px solid black;
+}
+
 .reg-row {
     display: flex;
     flex-flow: row nowrap;
-    width: 35vw;
+    background-color: #C7C8CC;
+}
+.reg-row:nth-child(even){
+    background-color: #EEEDEB;
 }
 
 .reg-category {
     display: flex;
     flex: 1;
-    background-color: aqua;
+    background-color: #808080;
     padding: 5px;
     justify-content: left;
     align-items: center;
