@@ -1,12 +1,12 @@
 'use client';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import './horse-styles.css';
 import horsesData from '../../../public/horses.json';
 
 export default function HorseListPage() {
     // add in collapsable section for horses info instead of dynamic routing maybe
-    const [horseDisplay, setHorseDisplay] = useState(false);
+    const [horseDisplay, setHorseDisplay] = useState(true);
 
     const horseVisable = () => {
         setHorseDisplay(true)
@@ -29,6 +29,21 @@ export default function HorseListPage() {
                 <div className="display-content">
                     <div className={`horse-display-info ${horseDisplay ? '' : 'hidden'}`}>
                         horse name
+
+                <div className="reg-row">
+                    <div className="reg-category">ID</div>
+                    <div className="reg-category">Name</div>
+                    <div className="reg-category">Breed</div>
+                </div>
+                {horsesData.map(horse => (
+                <div className="reg-row" key={horse.id}>
+                    <div className="reg-item">{horse.id}</div>
+                    <div className="reg-item">{horse.name}</div>
+                    <div className="reg-item">{horse.breed}</div>
+                </div>
+                ))}
+
+
                     </div>
                 </div>
             </div>

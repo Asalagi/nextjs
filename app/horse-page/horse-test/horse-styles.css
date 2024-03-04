@@ -43,3 +43,28 @@ body {
 .hidden {
     display: none;
 }
+
+.reg-row {
+    display: flex;
+    flex-flow: row nowrap;
+    width: 35vw;
+}
+
+.reg-category {
+    display: flex;
+    flex: 1;
+    background-color: aqua;
+    padding: 5px;
+    justify-content: left;
+    align-items: center;
+}
+
+.reg-item {
+    display: flex;
+    flex: 1;
+    padding: 5px;
+    justify-content: left;
+    align-items: center;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
