@@ -8,6 +8,11 @@ export default function HorseListPage() {
         id: number;
         name: string;
         breed: string;
+        age: number;
+        color: string;
+        height: string;
+        sex: string;
+        notes: string;
     }
 
     const [horseDisplay, setHorseDisplay] = useState<Horse | null>(null);
@@ -31,7 +36,7 @@ export default function HorseListPage() {
                         {horsesData.map(horse => (
                         <div className="reg-row" key={horse.id}>
                             <div className="reg-item">{horse.id}</div>
-                            <div className="reg-item" onClick={() => horseVisable(horse)}>{horse.name}</div>
+                            <div className="reg-item click" onClick={() => horseVisable(horse)}>{horse.name}</div>
                             <div className="reg-item">{horse.breed}</div>
                         </div>
                         ))}
@@ -41,8 +46,9 @@ export default function HorseListPage() {
                     <div className="horse-display-info">
                         {horseDisplay && (
                             <div>
-                                <h2>{horseDisplay.name}</h2>
-                                <p>{horseDisplay.breed}</p>
+                                <h2 className="horse-name">{horseDisplay.name}</h2>
+                                <p className="horse-info">{horseDisplay.age} {horseDisplay.color} {horseDisplay.breed} {horseDisplay.sex}, {horseDisplay.height}<br/>
+                                Notes: {horseDisplay.notes}</p>
                             </div>
                         )}
                     </div>
