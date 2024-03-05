@@ -11,7 +11,7 @@ body {
 .top-container {
     width: 70%;
     justify-content: center;
-    background-color: #808080;
+    background-color: #B67352;
 }
 
 .center-container {
@@ -25,19 +25,19 @@ body {
 .side-content {
     flex-direction: column;
     width: 30%;
-    background-color: #747264;
+    background-color: #8CB9BD;
 }
 
 .display-content {
     display: flex;
     width: 70%;
-    background-color: #E0CCBE;
+    background-color: #FEFBF6;
 }
 
 .bottom-container {
     width: 70%;
     justify-content: center;
-    background-color: #808080;
+    background-color: #B67352;
 }
 
 .hidden {

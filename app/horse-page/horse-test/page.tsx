@@ -48,7 +48,7 @@ export default function HorseListPage() {
                     </div>
                 </div>
             </div>
-            <div className="top-container">bottom</div>
+            <div className="bottom-container">bottom</div>
         </div>
     );
 };
