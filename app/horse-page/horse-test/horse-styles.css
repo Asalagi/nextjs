@@ -17,6 +17,8 @@ body {
     border-top: 1px solid black;
     border-left: 1px solid black;
     border-right: 1px solid black;
+    padding-bottom: 1%;
+    padding-top: 1%;
 }
 
 .click {
@@ -67,6 +69,8 @@ body {
     border-left: 1px solid black;
     border-right: 1px solid black;
     border-bottom: 1px solid black;
+    padding-bottom: 1%;
+    padding-top: 1%;
 }
 
 .hidden {
