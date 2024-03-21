@@ -1,32 +1,63 @@
 [
     {
         "id": 1,
-        "name": "Buddy",
-        "breed": "Thoroughbred",
-        "age": 2019,
-        "color": "Bay",
+        "name": "Tino",
+        "breed": "Quarter Horse",
+        "age": 1998,
+        "color": "Grey (Sorrel base)",
         "height": "15.3hh",
         "sex": "Gelding",
-        "notes": "Here are some notes on Buddy!"
+        "notes": "Tino is a good old man, a great rope horse and now in his old age a wonderful kids mount!"
     },
     {
         "id": 2,
-        "name": "Cowgirl",
+        "name": "Tillman",
         "breed": "Quarter Horse",
-        "age": 2016,
-        "color": "Palomino",
-        "height": "16hh",
-        "sex": "Mare",
-        "notes": "Here are some notes on Cowgirl!"
+        "age": 2006,
+        "color": "Bay Roan",
+        "height": "15.2hh",
+        "sex": "Gelding",
+        "notes": "Tillman is a Bay Roan gleding who has been used for team roping as a heal horse."
     },
     {
         "id": 3,
-        "name": "Teddy",
-        "breed": "Arabian",
-        "age": 2004,
-        "color": "Grey",
-        "height": "14.2hh",
-        "sex": "Stallion",
-        "notes": "Here are some notes on Teddy!"
+        "name": "Bob",
+        "breed": "Quarter Horse",
+        "age": 2014,
+        "color": "Buckskin",
+        "height": "15.1hh",
+        "sex": "Gelding",
+        "notes": "Bob is a nice horse. He is trained in team roping as a head and heel horse. He is also great with kids!"
+    },
+    {
+        "id": 4,
+        "name": "Cowboy",
+        "breed": "Quarter Horse",
+        "age": 2013,
+        "color": "Bay",
+        "height": "14.0hh",
+        "sex": "Gelding",
+        "notes": "Cowboy love his food and loves to graze. He is a great horse for advance kids. He has recenlty been tuned up and roped off."
+    }
+    ,
+    {
+        "id": 5,
+        "name": "Frog",
+        "breed": "Paint Horse",
+        "age": 1999,
+        "color": "Bay Tobiano",
+        "height": "15.2hh",
+        "sex": "Gelding",
+        "notes": "Frog is a funny horse. He is full of personality and will give you a good laugh. He is a great horse to ride for kids and adults. He can get a little spicy sometimes."
+    },
+    {
+        "id": 6,
+        "name": "Sylvie",
+        "breed": "Paint Horse",
+        "age": 2014,
+        "color": "Sorrel",
+        "height": "15.0hh",
+        "sex": "Mare",
+        "notes": "Sylvie is a sassy mare. She was used as a heel horse, but has since been working her way towards being a ranch riding horse. She is a fun horse to ride, very smart and very responsive."
     }
 ]
