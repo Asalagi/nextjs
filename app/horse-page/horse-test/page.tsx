@@ -43,6 +43,10 @@ export default function HorseListPage() {
         setSortClicked(true);
     }
 
+    const handleSortById = () => {
+        setSortClicked(false);
+    }
+
     return (
         <div className="main-container">
             <div className="top-container">top</div>
@@ -50,6 +54,7 @@ export default function HorseListPage() {
                 <div className="side-content">
             <h1>Horse List</h1> 
             <div className="sort-btn">
+                <button className="brtn" onClick={handleSortById}>Sort By ID</button>
                 <button className="btn" onClick={handleSortByName}>Sort By Name</button>
                 <button className="btn" onClick={handleSortByBreed}>Sort By Breed</button>
             </div>
