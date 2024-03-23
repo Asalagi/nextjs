@@ -28,6 +28,13 @@ body {
 .click:hover {
     color: #ECB159;
 }
+.sort-btn {
+    display: flex;
+    flex-direction: row;
+}
+.btn {
+    width: 30%;
+}
 
 .horse-name {
     margin-bottom: 0;

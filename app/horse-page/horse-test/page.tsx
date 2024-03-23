@@ -19,13 +19,13 @@ export default function HorseListPage() {
     const [sortClicked, setSortClicked] = useState(false);
     const [sortedHorses, setSortedHorses] = useState<Horse[]>([]);
 
-    useEffect(() => {
-        setSortedHorses(horsesData);
-    }, []);
-
     const horseVisable = (horse: Horse | null) => {
         setHorseDisplay(horse); 
     }
+
+    useEffect(() => {
+        setSortedHorses(horsesData);
+    }, []);
 
     const handleSortByName = () => {
         const sortedHorsesByName = [...horsesData].sort((a,b) => {
@@ -35,12 +35,24 @@ export default function HorseListPage() {
         setSortClicked(true)
     }
 
+    const handleSortByBreed = () => {
+        const sortedHorsesByBreed = [...horsesData].sort((a,b) => {
+            return a.breed > b.breed ? 1 : -1;
+        })
+        setSortedHorses(sortedHorsesByBreed);
+        setSortClicked(true);
+    }
+
     return (
         <div className="main-container">
             <div className="top-container">top</div>
             <div className="center-container">
                 <div className="side-content">
-            <h1>Horse List</h1> <button onClick={handleSortByName}>Sort By Name</button>
+            <h1>Horse List</h1> 
+            <div className="sort-btn">
+                <button className="btn" onClick={handleSortByName}>Sort By Name</button>
+                <button className="btn" onClick={handleSortByBreed}>Sort By Breed</button>
+            </div>
             <div className="table">
                         <div className="reg-row">
                             <div className="reg-category">ID</div>
